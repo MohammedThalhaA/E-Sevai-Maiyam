@@ -1,23 +1,23 @@
-import { ShieldCheck, Clock, IndianRupee, Smile } from "lucide-react";
+import { FcApproval, FcFlashOn, FcCurrencyExchange, FcCustomerSupport } from "react-icons/fc";
 
 const reasons = [
   {
-    icon: ShieldCheck,
+    icon: FcApproval,
     title: "Govt-Authorized Center",
     description: "We are an official CSC (Common Service Center) recognized by the Digital India initiative.",
   },
   {
-    icon: Clock,
+    icon: FcFlashOn,
     title: "Fast Turnaround",
     description: "Get your certificates and documents processed quickly without unnecessary delays.",
   },
   {
-    icon: IndianRupee,
+    icon: FcCurrencyExchange,
     title: "Transparent Pricing",
     description: "No hidden charges. We follow standard government pricing guidelines for all services.",
   },
   {
-    icon: Smile,
+    icon: FcCustomerSupport,
     title: "Friendly Local Staff",
     description: "Our Villivakkam team is always ready to guide you step-by-step in Tamil or English.",
   },

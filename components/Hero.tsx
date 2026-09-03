@@ -1,3 +1,4 @@
+import { FaWhatsapp } from "react-icons/fa";
 import { Phone } from "lucide-react";
 import { business } from "../data/site-content";
 
@@ -40,10 +41,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="w-full sm:w-auto flex items-center justify-center gap-2 bg-support hover:bg-[#18754a] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
-              {/* WhatsApp Icon placeholder via Lucide (MessageCircle or custom SVG, using simple text here) */}
-              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-message-circle">
-                <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"></path>
-              </svg>
+              <FaWhatsapp size={22} />
               WhatsApp Us
             </a>
           </div>

@@ -1,13 +1,14 @@
-import { FileText, IdCard, Receipt, Briefcase, Car, Printer, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { FcDocument, FcVipPass, FcMoneyTransfer, FcBriefcase, FcAutomotive, FcPrint } from "react-icons/fc";
 import { services, business } from "../data/site-content";
 
 const iconMap = {
-  certificates: FileText,
-  identity: IdCard,
-  bills: Receipt,
-  welfare: Briefcase,
-  insurance: Car,
-  printing: Printer,
+  certificates: FcDocument,
+  identity: FcVipPass,
+  bills: FcMoneyTransfer,
+  welfare: FcBriefcase,
+  insurance: FcAutomotive,
+  printing: FcPrint,
 };
 
 type CategoryProps = {
