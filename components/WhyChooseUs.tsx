@@ -6,13 +6,13 @@ export default function WhyChooseUs() {
       <div className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
         
         <div className="flex flex-col items-center text-center gap-3 mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm uppercase font-bold tracking-wide">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/15 text-secondary font-label-sm text-[10px] sm:text-label-sm uppercase font-bold tracking-wide">
             Villivakkam&apos;s Most Trusted Counter
           </div>
-          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-surface tracking-tight">
+          <h2 className="font-headline-lg text-[26px] sm:text-[32px] md:text-headline-lg font-bold text-on-surface tracking-tight">
             Why Choose Harshith E Sevai?
           </h2>
-          <p className="font-body-lg text-body-md md:text-body-lg text-tertiary max-w-xl">
+          <p className="font-body-lg text-[14px] sm:text-body-md md:text-body-lg text-tertiary max-w-xl">
             We combine authenticated government agency with the welcoming speed of a neighborhood digital cafe.
           </p>
         </div>

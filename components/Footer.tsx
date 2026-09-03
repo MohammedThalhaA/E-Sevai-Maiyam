@@ -12,7 +12,7 @@ export default function Footer() {
           
           <div className="lg:col-span-4 flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-surface-container-high/10 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-surface-container-high/10 flex items-center justify-center shrink-0">
                 <span className="material-symbols-outlined text-primary-fixed-dim text-[24px]">verified</span>
               </div>
               <div>

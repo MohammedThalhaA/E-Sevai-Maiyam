@@ -22,38 +22,38 @@ export default function Hero() {
               {/* Hero Left Column (~45%) */}
               <div className="lg:col-span-6 flex flex-col items-start gap-6">
                 {/* Eyebrow Pill Tag */}
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed font-label-md text-label-md font-bold tracking-wide">
+                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed font-label-sm sm:font-label-md text-[10px] sm:text-label-md font-bold tracking-wide">
                   <span className="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
                   <span>● {business.tagline.toUpperCase()}</span>
                 </div>
                 
                 {/* Massive Bold Headline */}
-                <h1 className="font-display-hero text-display-hero-mobile md:text-display-hero font-extrabold text-on-surface tracking-tight leading-[1.08]">
+                <h1 className="font-display-hero text-[38px] sm:text-[48px] md:text-display-hero font-extrabold text-on-surface tracking-tight leading-[1.08]">
                   Your Services. <br/>
                   <span className="text-primary-container drop-shadow-sm">Handled Fast.</span>
                 </h1>
                 
                 {/* Slate Gray Subtext */}
-                <p className="font-body-lg text-body-md md:text-body-lg text-tertiary max-w-xl">
+                <p className="font-body-lg text-[15px] sm:text-body-md md:text-body-lg text-tertiary max-w-xl">
                   Certificates, Aadhaar/PAN updates, utility bill payments, high-speed printing, and insurance — all handled quickly, accurately, and reliably in Villivakkam.
                 </p>
                 
                 {/* CTA Pill Buttons Side by Side */}
-                <div className="flex flex-wrap items-center gap-3.5 w-full sm:w-auto">
+                <div className="flex items-center gap-3 w-full sm:w-auto">
                   <a 
-                    className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-[0_4px_16px_rgba(34,197,94,0.3)] hover:shadow-[0_8px_24px_rgba(34,197,94,0.45)] hover:-translate-y-0.5 transition-all" 
+                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-full bg-primary-container text-on-surface font-label-sm sm:font-label-md text-[13px] sm:text-[14px] font-bold shadow-[0_4px_16px_rgba(34,197,94,0.3)] hover:shadow-[0_8px_24px_rgba(34,197,94,0.45)] hover:-translate-y-0.5 transition-all" 
                     href={`tel:+91${business.phonePrimary}`}
                   >
-                    <span className="material-symbols-outlined text-[20px]">call</span>
+                    <span className="material-symbols-outlined text-[16px] sm:text-[20px]">call</span>
                     <span>Call Now</span>
                   </a>
                   <a 
-                    className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-surface-container-lowest text-secondary font-label-md text-label-md font-bold shadow-sm hover:bg-secondary/10 transition-all" 
+                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-full bg-surface-container-lowest text-secondary font-label-sm sm:font-label-md text-[13px] sm:text-[14px] font-bold shadow-sm hover:bg-secondary/10 transition-all" 
                     href={whatsappUrl} 
                     rel="noopener noreferrer" 
                     target="_blank"
                   >
-                    <span className="material-symbols-outlined text-[20px]">chat</span>
+                    <span className="material-symbols-outlined text-[16px] sm:text-[20px]">chat</span>
                     <span>WhatsApp Us</span>
                   </a>
                 </div>
@@ -64,12 +64,12 @@ export default function Hero() {
                     <span className="material-symbols-outlined text-[18px]">verified</span>
                     <span>Govt Authorized CSC</span>
                   </div>
-                  <span className="text-tertiary-container">•</span>
+                  <span className="hidden sm:inline text-tertiary-container">•</span>
                   <div className="flex items-center gap-1.5">
                     <span className="material-symbols-outlined text-[18px] text-tertiary">schedule</span>
                     <span>{business.hours.display}</span>
                   </div>
-                  <span className="text-tertiary-container">•</span>
+                  <span className="hidden sm:inline text-tertiary-container">•</span>
                   <div className="flex items-center gap-1.5">
                     <span className="material-symbols-outlined text-[18px] text-primary">location_on</span>
                     <span>{business.landmark}</span>
@@ -132,7 +132,7 @@ export default function Hero() {
                 {/* Orbiting Floating Badges (5 total) */}
                 
                 {/* 1. WhatsApp Chat Bubble Badge (Top-Right) */}
-                <div className="absolute -top-3 right-4 sm:right-8 bg-surface-container-lowest rounded-2xl px-4 py-2.5 shadow-[0_8px_20px_rgba(0,109,65,0.12)] flex items-center gap-2.5 z-20">
+                <div className="hidden md:flex absolute -top-3 right-4 sm:right-8 bg-surface-container-lowest rounded-2xl px-4 py-2.5 shadow-[0_8px_20px_rgba(0,109,65,0.12)] items-center gap-2.5 z-20">
                   <div className="w-8 h-8 rounded-xl bg-secondary/15 flex items-center justify-center">
                     <span className="material-symbols-outlined text-secondary text-[20px]">chat</span>
                   </div>
@@ -143,7 +143,7 @@ export default function Hero() {
                 </div>
                 
                 {/* 2. Rupee / UPI Payment Badge (Bottom-Right) */}
-                <div className="absolute bottom-2 right-2 sm:right-6 bg-surface-container-lowest rounded-2xl px-4 py-2.5 shadow-[0_8px_20px_rgba(34,197,94,0.18)] flex items-center gap-2.5 z-20">
+                <div className="hidden md:flex absolute bottom-2 right-2 sm:right-6 bg-surface-container-lowest rounded-2xl px-4 py-2.5 shadow-[0_8px_20px_rgba(34,197,94,0.18)] items-center gap-2.5 z-20">
                   <div className="w-8 h-8 rounded-xl bg-primary-container/20 flex items-center justify-center">
                     <span className="material-symbols-outlined text-primary text-[20px]">currency_rupee</span>
                   </div>
@@ -154,7 +154,7 @@ export default function Hero() {
                 </div>
                 
                 {/* 3. High-precision Laser Printer Badge (Top-Left) */}
-                <div className="absolute top-6 left-0 sm:left-4 bg-surface-container-lowest rounded-2xl px-3.5 py-2 shadow-[0_8px_20px_rgba(20,27,36,0.08)] flex items-center gap-2 z-20">
+                <div className="hidden md:flex absolute top-6 left-0 sm:left-4 bg-surface-container-lowest rounded-2xl px-3.5 py-2 shadow-[0_8px_20px_rgba(20,27,36,0.08)] items-center gap-2 z-20">
                   <div className="w-8 h-8 rounded-xl bg-surface-container-high flex items-center justify-center">
                     <span className="material-symbols-outlined text-primary text-[20px]">print</span>
                   </div>
@@ -165,7 +165,7 @@ export default function Hero() {
                 </div>
                 
                 {/* 4. Flight / Travel Ticket Booking Badge (Bottom-Left) */}
-                <div className="absolute -bottom-4 left-4 sm:left-10 bg-surface-container-lowest rounded-2xl px-3.5 py-2 shadow-[0_8px_20px_rgba(20,27,36,0.08)] flex items-center gap-2 z-20">
+                <div className="hidden md:flex absolute -bottom-4 left-4 sm:left-10 bg-surface-container-lowest rounded-2xl px-3.5 py-2 shadow-[0_8px_20px_rgba(20,27,36,0.08)] items-center gap-2 z-20">
                   <div className="w-8 h-8 rounded-xl bg-tertiary-fixed flex items-center justify-center">
                     <span className="material-symbols-outlined text-on-tertiary-fixed text-[20px]">airplane_ticket</span>
                   </div>

@@ -76,11 +76,11 @@ function CategorySection({ items, metaKey }: CategoryProps) {
   return (
     <div className="mb-14 scroll-mt-24" id={`cat-${metaKey}`}>
       <div className="flex items-center gap-3 mb-6">
-        <div className={`w-10 h-10 rounded-xl ${meta.iconBg} flex items-center justify-center`}>
+        <div className={`w-10 h-10 rounded-xl ${meta.iconBg} flex items-center justify-center shrink-0`}>
           <span className={`material-symbols-outlined ${meta.iconColor} text-[22px]`}>{meta.icon}</span>
         </div>
         <div>
-          <h3 className="font-headline-sm text-headline-sm font-bold text-on-surface">{meta.title}</h3>
+          <h3 className="font-headline-sm text-[18px] sm:text-headline-sm font-bold text-on-surface">{meta.title}</h3>
           <p className="font-body-sm text-body-sm text-tertiary">{meta.subtitle}</p>
         </div>
       </div>
@@ -122,13 +122,13 @@ export default function ServicesGrid() {
     <section className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-12 md:py-16" id="services">
       {/* Section Header */}
       <div className="flex flex-col items-center text-center gap-3 mb-12">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm uppercase font-bold tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-container/20 text-primary font-label-sm text-[10px] sm:text-label-sm uppercase font-bold tracking-wider">
           Central & Tamil Nadu Citizen Desk
         </div>
-        <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-surface tracking-tight">
+        <h2 className="font-headline-lg text-[26px] sm:text-[32px] md:text-headline-lg font-bold text-on-surface tracking-tight">
           What We Offer
         </h2>
-        <p className="font-body-lg text-body-md md:text-body-lg text-tertiary max-w-2xl">
+        <p className="font-body-lg text-[14px] sm:text-body-md md:text-body-lg text-tertiary max-w-2xl">
           Comprehensive government citizen services and digital solutions under one roof with fast turnaround and verified compliance.
         </p>
         

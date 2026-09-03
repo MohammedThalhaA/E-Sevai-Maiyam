@@ -84,11 +84,11 @@ export default function ContactSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant" htmlFor="name">Your Full Name</label>
-                    <input className="h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="name" placeholder="e.g. S. Murugan" required type="text"/>
+                    <input className="h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="name" placeholder="Your Full Name" required type="text"/>
                   </div>
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant" htmlFor="phone">Mobile Number</label>
-                    <input className="h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="phone" placeholder="e.g. 98401 23456" required type="tel"/>
+                    <input className="h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="phone" placeholder="Mobile Number" required type="tel"/>
                   </div>
                 </div>
                 

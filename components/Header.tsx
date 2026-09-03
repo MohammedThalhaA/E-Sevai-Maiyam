@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState("services");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Scroll spy to highlight the active section dynamically
   useEffect(() => {
@@ -88,11 +89,46 @@ export default function Header() {
             <span>{business.phonePrimary}</span>
           </a>
           
-          <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center lg:hidden">
-            <span className="material-symbols-outlined text-on-primary text-[18px]">menu</span>
-          </div>
+          <button 
+            className="w-8 h-8 rounded-full bg-primary flex items-center justify-center lg:hidden cursor-pointer"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <span className="material-symbols-outlined text-on-primary text-[18px]">
+              {isMobileMenuOpen ? "close" : "menu"}
+            </span>
+          </button>
         </div>
       </div>
+      
+      {/* Mobile Navigation Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden absolute top-20 left-0 right-0 bg-surface-container-lowest border-t border-surface-container-low shadow-lg py-4 px-6 flex flex-col gap-3">
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              onClick={() => {
+                setActiveSection(link.id);
+                setIsMobileMenuOpen(false);
+              }}
+              className={`font-label-md text-[16px] py-2 border-b border-surface-container-lowest transition-colors ${
+                activeSection === link.id
+                  ? "text-primary font-bold"
+                  : "text-on-surface-variant"
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
+          <a 
+            className="mt-2 flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary-container text-on-surface font-label-md font-bold shadow-sm" 
+            href={`tel:+91${business.phonePrimary}`}
+          >
+            <span className="material-symbols-outlined text-[18px]">call</span>
+            <span>Call Now</span>
+          </a>
+        </div>
+      )}
     </header>
   );
 }
