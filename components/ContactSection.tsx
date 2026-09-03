@@ -111,7 +111,7 @@ export default function ContactSection() {
                   <textarea className="p-3.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="msg" placeholder="Tell us if you have soft copies ready or urgent deadlines..." rows={3}></textarea>
                 </div>
                 
-                <button className="w-full h-12 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-[0_4px_14px_rgba(245,166,35,0.3)] hover:shadow-[0_6px_20px_rgba(245,166,35,0.45)] transition-all" type="submit">
+                <button className="w-full h-12 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-[0_4px_14px_rgba(34,197,94,0.3)] hover:shadow-[0_6px_20px_rgba(34,197,94,0.45)] transition-all" type="submit">
                   Submit Inquiry
                 </button>
                 
@@ -162,18 +162,7 @@ export default function ContactSection() {
               </div>
             </div>
             
-            {/* Live Status Counter Widget */}
-            <div className="bg-gradient-to-r from-primary-fixed/40 to-surface-container-low rounded-3xl p-6 shadow-sm flex items-center justify-between">
-              <div className="flex flex-col">
-                <span className="font-label-sm text-label-sm text-on-surface-variant font-semibold">Today&apos;s Token Traffic</span>
-                <span className="font-headline-sm text-headline-sm font-bold text-on-surface">Tokens Serving Fast</span>
-                <span className="font-body-sm text-body-sm text-tertiary">Average wait time: ~6 mins</span>
-              </div>
-              <div className="w-14 h-14 rounded-2xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-sm">
-                <span className="font-display-hero text-[20px] font-bold text-secondary">06</span>
-                <span className="text-[10px] text-tertiary uppercase font-bold">Mins</span>
-              </div>
-            </div>
+
           </div>
           
         </div>

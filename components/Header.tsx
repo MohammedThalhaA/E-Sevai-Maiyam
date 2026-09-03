@@ -1,8 +1,44 @@
 "use client";
 
 import { business } from "../data/site-content";
+import { useState, useEffect } from "react";
 
 export default function Header() {
+  const [activeSection, setActiveSection] = useState("services");
+
+  // Scroll spy to highlight the active section dynamically
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["services", "why-us", "how-it-works", "contact"];
+      // Add a small offset so it triggers slightly before the section hits the top
+      const scrollPosition = window.scrollY + 150; 
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(section);
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Call once to set initial state
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { id: "services", label: "Services" },
+    { id: "why-us", label: "Why Us" },
+    { id: "how-it-works", label: "How It Works" },
+    { id: "contact", label: "Contact" },
+  ];
+
   return (
     <header className="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
       <div className="h-20 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-4">
@@ -26,16 +62,26 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1 bg-surface-container-low/70 px-3 py-1.5 rounded-full">
-          <a className="transition-colors bg-primary-container text-on-primary-container font-bold rounded-full px-4 py-2 text-label-md" href="#services">Services</a>
-          <a className="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-4 py-2 rounded-full transition-colors" href="#why-us">Why Us</a>
-          <a className="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-4 py-2 rounded-full transition-colors" href="#how-it-works">How It Works</a>
-          <a className="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-4 py-2 rounded-full transition-colors" href="#contact">Contact</a>
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              onClick={() => setActiveSection(link.id)}
+              className={`font-label-md text-label-md px-4 py-2 rounded-full transition-colors ${
+                activeSection === link.id
+                  ? "bg-primary-container text-on-primary-container font-bold"
+                  : "text-on-surface-variant hover:text-on-surface"
+              }`}
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
 
         {/* Action Buttons */}
         <div className="flex items-center gap-3">
           <a 
-            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-[0_4px_12px_rgba(245,166,35,0.25)] hover:shadow-[0_6px_18px_rgba(245,166,35,0.4)] transition-all transform hover:-translate-y-0.5 active:translate-y-0" 
+            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-[0_4px_12px_rgba(34,197,94,0.25)] hover:shadow-[0_6px_18px_rgba(34,197,94,0.4)] transition-all transform hover:-translate-y-0.5 active:translate-y-0" 
             href={`tel:+91${business.phonePrimary}`}
           >
             <span className="material-symbols-outlined text-[18px]">call</span>

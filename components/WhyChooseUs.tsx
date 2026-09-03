@@ -23,7 +23,7 @@ export default function WhyChooseUs() {
           {/* 1. Govt-Authorized Center */}
           <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col items-start gap-4">
             <div className="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center">
-              <span className="material-symbols-outlined text-primary text-[26px]">verified_user</span>
+              <span className="material-symbols-outlined text-on-surface text-[26px]">verified_user</span>
             </div>
             <div>
               <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Govt-Authorized Center</h3>
@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
           {/* 2. Fast Turnaround */}
           <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col items-start gap-4">
             <div className="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center">
-              <span className="material-symbols-outlined text-secondary text-[26px]">speed</span>
+              <span className="material-symbols-outlined text-on-surface text-[26px]">speed</span>
             </div>
             <div>
               <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Fast Turnaround</h3>
@@ -49,7 +49,7 @@ export default function WhyChooseUs() {
           {/* 3. Transparent Pricing */}
           <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col items-start gap-4">
             <div className="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center">
-              <span className="material-symbols-outlined text-primary text-[26px]">price_check</span>
+              <span className="material-symbols-outlined text-on-surface text-[26px]">price_check</span>
             </div>
             <div>
               <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Transparent Pricing</h3>
@@ -62,7 +62,7 @@ export default function WhyChooseUs() {
           {/* 4. Friendly Local Staff */}
           <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col items-start gap-4">
             <div className="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center">
-              <span className="material-symbols-outlined text-secondary text-[26px]">support_agent</span>
+              <span className="material-symbols-outlined text-on-surface text-[26px]">support_agent</span>
             </div>
             <div>
               <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Friendly Local Staff</h3>

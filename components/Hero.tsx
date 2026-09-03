@@ -7,7 +7,7 @@ export default function Hero() {
   const whatsappUrl = `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(whatsappMsg)}`;
 
   return (
-    <div className="flex flex-col w-full relative pt-20">
+    <div className="flex flex-col w-full relative">
       {/* Top Ambient Glow Aura */}
       <div className="relative w-full overflow-hidden">
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-gradient-to-b from-primary-container/20 via-surface-container-low to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
@@ -41,7 +41,7 @@ export default function Hero() {
                 {/* CTA Pill Buttons Side by Side */}
                 <div className="flex flex-wrap items-center gap-3.5 w-full sm:w-auto">
                   <a 
-                    className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-[0_4px_16px_rgba(245,166,35,0.3)] hover:shadow-[0_8px_24px_rgba(245,166,35,0.45)] hover:-translate-y-0.5 transition-all" 
+                    className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-[0_4px_16px_rgba(34,197,94,0.3)] hover:shadow-[0_8px_24px_rgba(34,197,94,0.45)] hover:-translate-y-0.5 transition-all" 
                     href={`tel:+91${business.phonePrimary}`}
                   >
                     <span className="material-symbols-outlined text-[20px]">call</span>
@@ -143,7 +143,7 @@ export default function Hero() {
                 </div>
                 
                 {/* 2. Rupee / UPI Payment Badge (Bottom-Right) */}
-                <div className="absolute bottom-2 right-2 sm:right-6 bg-surface-container-lowest rounded-2xl px-4 py-2.5 shadow-[0_8px_20px_rgba(245,166,35,0.18)] flex items-center gap-2.5 z-20">
+                <div className="absolute bottom-2 right-2 sm:right-6 bg-surface-container-lowest rounded-2xl px-4 py-2.5 shadow-[0_8px_20px_rgba(34,197,94,0.18)] flex items-center gap-2.5 z-20">
                   <div className="w-8 h-8 rounded-xl bg-primary-container/20 flex items-center justify-center">
                     <span className="material-symbols-outlined text-primary text-[20px]">currency_rupee</span>
                   </div>

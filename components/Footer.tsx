@@ -45,9 +45,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2 font-body-sm text-body-sm text-tertiary-container">
               <p><span className="font-label-sm text-surface-container-lowest block">Mon – Sat</span>09:00 AM – 09:00 PM</p>
               <p><span className="font-label-sm text-surface-container-lowest block">Sunday</span>10:00 AM – 03:00 PM</p>
-              <span className="inline-flex items-center gap-1.5 text-secondary-fixed text-label-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>Active Live Tokens
-              </span>
+
             </div>
           </div>
           

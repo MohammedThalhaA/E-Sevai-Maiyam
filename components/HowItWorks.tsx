@@ -4,7 +4,7 @@ export default function HowItWorks() {
   return (
     <section className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-16 md:py-20" id="how-it-works">
       <div className="flex flex-col items-center text-center gap-3 mb-14">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-container/20 text-on-primary-container font-label-sm text-label-sm uppercase font-bold tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm uppercase font-bold tracking-wider">
           Effortless 3-Step Flow
         </div>
         <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-surface tracking-tight">
@@ -22,7 +22,7 @@ export default function HowItWorks() {
         
         {/* Step 1 */}
         <div className="relative flex flex-col items-center text-center gap-4 z-10">
-          <div className="w-20 h-20 rounded-full bg-primary-container text-on-surface flex items-center justify-center font-display-hero text-[28px] font-extrabold shadow-[0_8px_20px_rgba(245,166,35,0.35)]">
+          <div className="w-20 h-20 rounded-full bg-primary-container text-on-surface flex items-center justify-center font-display-hero text-[28px] font-extrabold shadow-[0_8px_20px_rgba(34,197,94,0.35)]">
             1
           </div>
           <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm w-full flex flex-col items-center gap-2">
@@ -38,7 +38,7 @@ export default function HowItWorks() {
         
         {/* Step 2 */}
         <div className="relative flex flex-col items-center text-center gap-4 z-10">
-          <div className="w-20 h-20 rounded-full bg-primary-container text-on-surface flex items-center justify-center font-display-hero text-[28px] font-extrabold shadow-[0_8px_20px_rgba(245,166,35,0.35)]">
+          <div className="w-20 h-20 rounded-full bg-primary-container text-on-surface flex items-center justify-center font-display-hero text-[28px] font-extrabold shadow-[0_8px_20px_rgba(34,197,94,0.35)]">
             2
           </div>
           <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm w-full flex flex-col items-center gap-2">
@@ -54,7 +54,7 @@ export default function HowItWorks() {
         
         {/* Step 3 */}
         <div className="relative flex flex-col items-center text-center gap-4 z-10">
-          <div className="w-20 h-20 rounded-full bg-primary-container text-on-surface flex items-center justify-center font-display-hero text-[28px] font-extrabold shadow-[0_8px_20px_rgba(245,166,35,0.35)]">
+          <div className="w-20 h-20 rounded-full bg-primary-container text-on-surface flex items-center justify-center font-display-hero text-[28px] font-extrabold shadow-[0_8px_20px_rgba(34,197,94,0.35)]">
             3
           </div>
           <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm w-full flex flex-col items-center gap-2">

@@ -8,60 +8,60 @@ const categoryMeta = {
     subtitle: "Tamil Nadu Revenue & Social Welfare Department documentation",
     icon: "assignment",
     iconBg: "bg-primary-fixed",
-    iconColor: "text-primary",
+    iconColor: "text-on-surface",
     cardIconColor: "text-primary",
     cardIconBg: "bg-surface-container-low",
-    cardIcons: ["diversity_3", "payments", "family_restroom", "home_pin", "workspace_premium", "fingerprint"]
+    cardIcons: ["diversity_3", "payments", "family_restroom", "home_pin", "workspace_premium", "group", "fingerprint", "verified_user"]
   },
   identity: {
     title: "2. Identity & Documents",
     subtitle: "Central and state statutory ID enrollment, correction & physical PVC cards",
     icon: "contact_mail",
     iconBg: "bg-secondary-fixed",
-    iconColor: "text-secondary",
+    iconColor: "text-on-surface",
     cardIconColor: "text-secondary",
     cardIconBg: "bg-surface-container-low",
-    cardIcons: ["credit_card", "account_box", "how_to_vote", "receipt_long", "travel_explore", "store"]
+    cardIcons: ["credit_card", "account_box", "how_to_vote", "receipt_long", "travel_explore", "store", "badge"]
   },
   bills: {
     title: "3. Bills & Utility Payments",
     subtitle: "Instant payment receipts with zero gateway failures",
     icon: "receipt",
     iconBg: "bg-primary-fixed",
-    iconColor: "text-primary",
+    iconColor: "text-on-surface",
     cardIconColor: "text-primary",
     cardIconBg: "bg-surface-container-low",
-    cardIcons: ["bolt", "water_drop", "receipt", "receipt", "receipt", "receipt"]
+    cardIcons: ["bolt", "apartment", "water_drop", "phone_iphone", "traffic", "account_balance_wallet"]
   },
   welfare: {
     title: "4. Employment & Welfare",
     subtitle: "Government scheme registrations and job portals",
     icon: "badge",
     iconBg: "bg-secondary-fixed",
-    iconColor: "text-secondary",
+    iconColor: "text-on-surface",
     cardIconColor: "text-secondary",
     cardIconBg: "bg-surface-container-low",
-    cardIcons: ["badge", "badge", "badge", "badge", "badge", "badge"]
+    cardIcons: ["school", "savings", "local_police"]
   },
   insurance: {
     title: "5. Insurance & Travel",
     subtitle: "Quick policy issuance and confirmed ticket bookings",
     icon: "verified_user",
     iconBg: "bg-primary-fixed",
-    iconColor: "text-primary",
+    iconColor: "text-on-surface",
     cardIconColor: "text-primary",
     cardIconBg: "bg-surface-container-low",
-    cardIcons: ["two_wheeler", "flight", "directions_bus", "train", "train", "train"]
+    cardIcons: ["two_wheeler", "flight_takeoff"]
   },
   printing: {
     title: "6. Printing & Xerox",
     subtitle: "High quality thermal, color, and PVC card printing",
     icon: "print",
     iconBg: "bg-secondary-fixed",
-    iconColor: "text-secondary",
+    iconColor: "text-on-surface",
     cardIconColor: "text-secondary",
     cardIconBg: "bg-surface-container-low",
-    cardIcons: ["print", "print", "print", "print", "print", "print"]
+    cardIcons: ["file_copy", "layers"]
   }
 };
 
@@ -122,7 +122,7 @@ export default function ServicesGrid() {
     <section className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-12 md:py-16" id="services">
       {/* Section Header */}
       <div className="flex flex-col items-center text-center gap-3 mb-12">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-container/15 text-on-primary-container font-label-sm text-label-sm uppercase font-bold tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm uppercase font-bold tracking-wider">
           Central & Tamil Nadu Citizen Desk
         </div>
         <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-surface tracking-tight">

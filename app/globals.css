@@ -7,7 +7,7 @@
   --color-on-background: #151c25;
   --color-secondary: #006d41;
   --color-tertiary-container: #afb7c0;
-  --color-inverse-primary: #ffb955;
+  --color-inverse-primary: #4ade80;
   --color-inverse-surface: #2a313b;
   --color-secondary-fixed: #90f7ba;
   --color-on-surface-variant: #524534;
@@ -18,7 +18,7 @@
   --color-on-tertiary-fixed: #151c23;
   --color-surface-container-low: #eff4ff;
   --color-surface-container-highest: #dce3f0;
-  --color-on-primary-fixed: #291800;
+  --color-on-primary-fixed: #052e16;
   --color-on-surface: #151c25;
   --color-secondary-fixed-dim: #74db9f;
   --color-error: #ba1a1a;
@@ -37,22 +37,22 @@
   --color-inverse-on-surface: #eaf1fe;
   --color-surface-container-lowest: #ffffff;
   --color-background: #f8f9ff;
-  --color-on-primary-container: #644000;
+  --color-on-primary-container: #ffffff;
   --color-on-tertiary: #ffffff;
   --color-outline-variant: #d7c3ae;
-  --color-primary: #835500;
-  --color-primary-fixed-dim: #ffb955;
+  --color-primary: #15803d;
+  --color-primary-fixed-dim: #22c55e;
   --color-on-tertiary-container: #40484f;
   --color-surface-dim: #d4dae7;
   --color-on-secondary-container: #007144;
   --color-on-secondary: #ffffff;
-  --color-primary-fixed: #ffddb4;
-  --color-primary-container: #f5a623;
-  --color-on-primary-fixed-variant: #633f00;
+  --color-primary-fixed: #4ade80;
+  --color-primary-container: #22c55e;
+  --color-on-primary-fixed-variant: #14532d;
 
   /* Legacy aliases for backward compatibility with our components if needed */
-  --color-accent: #f5a623;
-  --color-accent-hover: #d97706;
+  --color-accent: #4ade80;
+  --color-accent-hover: #22c55e;
   --color-support: #006d41;
 
   /* Stitch AI Border Radius */
