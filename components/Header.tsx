@@ -1,63 +1,90 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Phone, Menu, X } from "lucide-react";
 import { business } from "../data/site-content";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        {/* Logo / Title */}
-        <div className="flex flex-col">
-          <a href="#" className="font-bold text-xl md:text-2xl text-primary tracking-tight">
-            {business.name}
-          </a>
-          <span className="text-xs md:text-sm text-gray-500 font-medium">
-            {business.nameTa}
-          </span>
-        </div>
+    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? "py-2" : "py-4"}`}>
+      <div className="container mx-auto px-4">
+        <div className={`glass-header rounded-3xl px-6 h-16 md:h-20 flex items-center justify-between transition-all duration-300 ${scrolled ? "shadow-md bg-white/90" : "bg-white/70"}`}>
+          
+          {/* Logo / Title */}
+          <div className="flex flex-col">
+            <a href="#" className="font-extrabold text-xl md:text-2xl text-primary tracking-tight">
+              {business.name}
+            </a>
+            <span className="text-[10px] md:text-xs text-neutral-muted font-bold uppercase tracking-wider">
+              {business.nameTa}
+            </span>
+          </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 font-medium text-sm">
-          <a href="#services" className="hover:text-primary transition-colors">Services</a>
-          <a href="#why-us" className="hover:text-primary transition-colors">Why Choose Us</a>
-          <a href="#how-it-works" className="hover:text-primary transition-colors">How it Works</a>
-          <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
-        </nav>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8 font-bold text-sm text-neutral-muted">
+            <a href="#services" className="hover:text-primary transition-colors">Services</a>
+            <a href="#why-us" className="hover:text-primary transition-colors">Why Choose Us</a>
+            <a href="#how-it-works" className="hover:text-primary transition-colors">How it Works</a>
+            <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+          </nav>
 
-        {/* Actions */}
-        <div className="flex items-center gap-3 md:gap-4">
-          <a 
-            href={`tel:+91${business.phonePrimary}`}
-            className="flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded-full font-semibold text-sm transition-colors shadow-sm"
-          >
-            <Phone size={16} />
-            <span className="hidden sm:inline">Call Now</span>
-          </a>
+          {/* Actions */}
+          <div className="flex items-center gap-3 md:gap-4">
+            <a 
+              href={`tel:+91${business.phonePrimary}`}
+              className="hidden sm:flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+            >
+              <Phone size={16} />
+              Call Now
+            </a>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden p-2 text-gray-700"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle mobile menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            {/* Mobile Menu Toggle */}
+            <button 
+              className="md:hidden p-2 text-neutral-text bg-neutral-bg rounded-lg"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-white shadow-md border-t border-gray-100 flex flex-col py-4 px-6 gap-4 font-medium">
-          <a href="#services" onClick={() => setIsMobileMenuOpen(false)}>Services</a>
-          <a href="#why-us" onClick={() => setIsMobileMenuOpen(false)}>Why Choose Us</a>
-          <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)}>How it Works</a>
-          <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
-        </div>
-      )}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden absolute top-[85px] left-4 right-4 bg-white/95 backdrop-blur-xl shadow-2xl rounded-3xl border border-gray-100 flex flex-col py-6 px-8 gap-6 font-bold text-neutral-text text-lg z-40"
+          >
+            <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-primary">Services</a>
+            <a href="#why-us" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-primary">Why Choose Us</a>
+            <a href="#how-it-works" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-primary">How it Works</a>
+            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-primary">Contact</a>
+            <a 
+              href={`tel:+91${business.phonePrimary}`}
+              className="flex items-center justify-center gap-2 bg-primary text-white px-5 py-4 rounded-2xl font-bold transition-all shadow-md mt-2"
+            >
+              <Phone size={20} />
+              Call Now
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

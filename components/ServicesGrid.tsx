@@ -1,14 +1,16 @@
-import { ArrowRight } from "lucide-react";
-import { FcDocument, FcVipPass, FcMoneyTransfer, FcBriefcase, FcAutomotive, FcPrint } from "react-icons/fc";
+"use client";
+
+import { FileText, IdCard, Receipt, Briefcase, Car, Printer, ArrowRight } from "lucide-react";
 import { services, business } from "../data/site-content";
+import FadeIn from "./FadeIn";
 
 const iconMap = {
-  certificates: FcDocument,
-  identity: FcVipPass,
-  bills: FcMoneyTransfer,
-  welfare: FcBriefcase,
-  insurance: FcAutomotive,
-  printing: FcPrint,
+  certificates: FileText,
+  identity: IdCard,
+  bills: Receipt,
+  welfare: Briefcase,
+  insurance: Car,
+  printing: Printer,
 };
 
 type CategoryProps = {
@@ -21,39 +23,46 @@ function CategorySection({ title, items, iconName }: CategoryProps) {
   const Icon = iconMap[iconName];
 
   return (
-    <div className="mb-12">
-      <div className="flex items-center gap-3 mb-6">
-        <div className="p-3 bg-primary/10 rounded-xl text-primary">
-          <Icon size={24} />
+    <div className="mb-20">
+      <FadeIn delay={0.1}>
+        <div className="flex items-center gap-4 mb-8">
+          <div className="p-4 bg-primary rounded-2xl text-white shadow-lg shadow-primary/30">
+            <Icon size={28} strokeWidth={2.5} />
+          </div>
+          <h3 className="text-2xl md:text-3xl font-extrabold text-neutral-text">{title}</h3>
         </div>
-        <h3 className="text-2xl font-bold text-neutral-text">{title}</h3>
-      </div>
+      </FadeIn>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {items.map((service) => {
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {items.map((service, idx) => {
           const message = `Hi, I want to know more about: ${service.name}`;
           const whatsappUrl = `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(message)}`;
           
           return (
-            <a 
-              key={service.id}
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-white border border-gray-100 p-5 rounded-2xl shadow-sm hover:shadow-md hover:border-primary/30 transition-all flex flex-col h-full"
-            >
-              <h4 className="font-semibold text-neutral-text mb-1 group-hover:text-primary transition-colors">
-                {service.name}
-              </h4>
-              <p className="text-sm text-gray-500 mb-4 font-medium font-sans">
-                {service.nameTa}
-              </p>
-              
-              <div className="mt-auto pt-4 border-t border-gray-50 flex items-center text-sm font-semibold text-primary">
-                <span>Ask about this</span>
-                <ArrowRight size={16} className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-              </div>
-            </a>
+            <FadeIn key={service.id} delay={0.1 + (idx % 3) * 0.1}>
+              <a 
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block bg-white border border-gray-100 p-6 rounded-[24px] premium-shadow-hover h-full flex flex-col"
+              >
+                <div className="flex-grow">
+                  <h4 className="text-lg font-bold text-neutral-text mb-2 group-hover:text-primary transition-colors">
+                    {service.name}
+                  </h4>
+                  <p className="text-neutral-muted font-medium font-sans">
+                    {service.nameTa}
+                  </p>
+                </div>
+                
+                <div className="mt-6 pt-4 border-t border-gray-50 flex items-center justify-between text-sm font-bold text-primary">
+                  <span>Ask about this</span>
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                    <ArrowRight size={16} />
+                  </div>
+                </div>
+              </a>
+            </FadeIn>
           );
         })}
       </div>
@@ -63,14 +72,16 @@ function CategorySection({ title, items, iconName }: CategoryProps) {
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="py-20 bg-neutral-bg">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-text mb-4">Our Services</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            We provide a wide range of government and digital services under one roof. Click on any service to WhatsApp us directly.
-          </p>
-        </div>
+    <section id="services" className="py-24 bg-white relative">
+      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+        <FadeIn>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-neutral-text mb-6">Our Services</h2>
+            <p className="text-lg text-neutral-muted max-w-2xl mx-auto font-medium">
+              We provide a wide range of government and digital services under one roof. Click on any service to WhatsApp us directly.
+            </p>
+          </div>
+        </FadeIn>
 
         <CategorySection title="Government Certificates" items={services.certificates} iconName="certificates" />
         <CategorySection title="Identity & Documents" items={services.identity} iconName="identity" />

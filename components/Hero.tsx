@@ -1,68 +1,86 @@
+"use client";
+
 import { FaWhatsapp } from "react-icons/fa";
-import { Phone } from "lucide-react";
+import { Phone, ShieldCheck, Clock, MapPin } from "lucide-react";
 import { business } from "../data/site-content";
+import FadeIn from "./FadeIn";
 
 export default function Hero() {
   const whatsappUrl = `https://wa.me/${business.whatsapp}?text=Hi, I want to know more about your services.`;
 
   return (
-    <section className="relative bg-white pt-16 pb-20 md:pt-24 md:pb-32 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 z-0 opacity-5 bg-[radial-gradient(var(--color-primary)_1px,transparent_1px)] [background-size:20px_20px]" />
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl z-0" />
-      <div className="absolute top-48 -left-24 w-72 h-72 bg-accent/10 rounded-full blur-3xl z-0" />
+    <section className="relative pt-24 pb-32 md:pt-32 md:pb-40 overflow-hidden bg-neutral-bg">
+      {/* Premium Background Elements */}
+      <div className="absolute top-0 inset-x-0 h-[500px] bg-gradient-to-b from-primary/5 to-transparent z-0" />
+      <div className="absolute top-20 right-0 md:right-[10%] w-[30rem] h-[30rem] bg-blue-400/20 rounded-full blur-3xl z-0" />
+      <div className="absolute top-40 left-0 md:left-[10%] w-[25rem] h-[25rem] bg-accent/15 rounded-full blur-3xl z-0" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block mb-6 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary font-semibold text-sm">
-            {business.tagline}
-          </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-neutral-text leading-tight mb-6 tracking-tight">
-            Your One-Stop Government & Digital Service Center in Villivakkam
-          </h1>
+          <FadeIn delay={0.1}>
+            <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full bg-white/80 backdrop-blur-md border border-primary/10 shadow-sm text-primary font-bold text-sm">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+              </span>
+              {business.tagline}
+            </div>
+          </FadeIn>
           
-          <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Get your government certificates, Aadhaar/PAN services, bill payments, printing, and insurance done fast, reliably, and locally.
-          </p>
+          <FadeIn delay={0.2}>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-neutral-text leading-tight mb-6 tracking-tight">
+              Your One-Stop <span className="text-gradient">Government</span> & Digital Service Center
+            </h1>
+          </FadeIn>
+          
+          <FadeIn delay={0.3}>
+            <p className="text-lg md:text-xl text-neutral-muted mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
+              Get your certificates, Aadhaar/PAN services, bill payments, and insurance done fast, reliably, and locally in Villivakkam.
+            </p>
+          </FadeIn>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <a 
-              href={`tel:+91${business.phonePrimary}`}
-              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
-            >
-              <Phone size={20} />
-              Call Now
-            </a>
-            
-            <a 
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-support hover:bg-[#18754a] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
-            >
-              <FaWhatsapp size={22} />
-              WhatsApp Us
-            </a>
-          </div>
+          <FadeIn delay={0.4} direction="up">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+              <a 
+                href={`tel:+91${business.phonePrimary}`}
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all shadow-lg hover:shadow-[0_10px_25px_rgba(37,99,235,0.4)] hover:-translate-y-1"
+              >
+                <Phone size={20} />
+                Call Now
+              </a>
+              
+              <a 
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-support hover:bg-[#0e9b6a] text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all shadow-lg hover:shadow-[0_10px_25px_rgba(16,185,129,0.4)] hover:-translate-y-1"
+              >
+                <FaWhatsapp size={22} />
+                WhatsApp Us
+              </a>
+            </div>
+          </FadeIn>
 
           {/* Trust Strip */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-y-3 gap-x-6 text-sm font-medium text-gray-700 bg-white/80 backdrop-blur-sm py-4 px-6 rounded-2xl border border-gray-100 shadow-sm inline-flex flex-wrap">
-            <div className="flex items-center gap-1.5">
-              <span className="text-green-600">✅</span> 
-              <span>Govt Authorized CSC</span>
+          <FadeIn delay={0.5}>
+            <div className="glass-card py-5 px-8 rounded-full inline-flex flex-wrap items-center justify-center gap-y-3 gap-x-8 text-sm font-semibold text-neutral-muted">
+              <div className="flex items-center gap-2">
+                <div className="bg-green-100 p-1.5 rounded-full"><ShieldCheck size={16} className="text-green-600" /></div>
+                <span className="text-neutral-text">Govt Authorized</span>
+              </div>
+              <div className="hidden sm:block w-1 h-1 bg-gray-300 rounded-full"></div>
+              <div className="flex items-center gap-2">
+                <div className="bg-blue-100 p-1.5 rounded-full"><Clock size={16} className="text-primary" /></div>
+                <span className="text-neutral-text">{business.hours.display}</span>
+              </div>
+              <div className="hidden sm:block w-1 h-1 bg-gray-300 rounded-full"></div>
+              <div className="flex items-center gap-2">
+                <div className="bg-accent/20 p-1.5 rounded-full"><MapPin size={16} className="text-accent-hover" /></div>
+                <span className="text-neutral-text">{business.landmark}</span>
+              </div>
             </div>
-            <div className="hidden sm:block text-gray-300">•</div>
-            <div className="flex items-center gap-1.5">
-              <span className="text-blue-500">🕒</span> 
-              <span>{business.hours.display}</span>
-            </div>
-            <div className="hidden sm:block text-gray-300">•</div>
-            <div className="flex items-center gap-1.5">
-              <span className="text-red-500">📍</span> 
-              <span>{business.landmark}</span>
-            </div>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>
