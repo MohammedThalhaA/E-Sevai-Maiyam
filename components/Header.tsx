@@ -47,17 +47,17 @@ export default function Header() {
       <div className="h-20 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-4">
         
         {/* Logo Section */}
-        <div className="flex items-center gap-3 shrink-0 min-w-0">
-          <div className="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 shrink min-w-0">
+          <div className="w-10 h-10 rounded-xl bg-surface-container-high hidden sm:flex items-center justify-center shrink-0">
             <span className="material-symbols-outlined text-primary text-[24px]">account_balance</span>
           </div>
           <div className="flex flex-col min-w-0">
-            <div className="flex items-center gap-2">
-              <span className="font-headline-sm text-[16px] sm:text-[20px] text-on-surface tracking-tight font-bold truncate">{business.name}</span>
-              <span className="inline-flex shrink-0 items-center px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wide uppercase bg-primary-container/20 text-primary">CSC</span>
+            <div className="flex items-center gap-1 sm:gap-2">
+              <span className="font-headline-sm text-[14px] sm:text-[20px] text-on-surface tracking-tight font-bold truncate">{business.name}</span>
+              <span className="hidden sm:inline-flex shrink-0 items-center px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wide uppercase bg-primary-container/20 text-primary">CSC</span>
             </div>
-            <span className="font-label-sm text-[10px] sm:text-[12px] text-secondary font-semibold flex items-center gap-1.5 truncate">
-              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse shrink-0"></span>
+            <span className="font-label-sm text-[9px] sm:text-[12px] text-secondary font-semibold flex items-center gap-1.5 truncate">
+              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-secondary animate-pulse shrink-0"></span>
               {t.hero.openNow}
             </span>
           </div>
@@ -82,12 +82,18 @@ export default function Header() {
         </nav>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <button
             onClick={toggleLanguage}
-            className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full border border-surface-container-high bg-surface text-on-surface font-label-md text-label-md font-bold shadow-sm hover:bg-surface-container-low transition-colors"
+            className="flex items-center bg-surface-container-high rounded-full p-0.5 shrink-0 cursor-pointer"
+            aria-label="Toggle language"
           >
-            {language === "en" ? "தமிழ்" : "English"}
+            <span className={`px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all ${language === 'en' ? 'bg-surface shadow-sm text-primary' : 'text-on-surface-variant hover:text-on-surface'}`}>
+              EN
+            </span>
+            <span className={`px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all ${language === 'ta' ? 'bg-surface shadow-sm text-primary' : 'text-on-surface-variant hover:text-on-surface'}`}>
+              தமிழ்
+            </span>
           </button>
           
           <a 
@@ -136,13 +142,6 @@ export default function Header() {
             <span className="material-symbols-outlined text-[18px]">call</span>
             <span>{t.nav.callNow}</span>
           </a>
-          
-          <button
-            onClick={toggleLanguage}
-            className="mt-2 flex items-center justify-center w-full px-5 py-3 rounded-xl border border-surface-container-high bg-surface text-on-surface font-label-md font-bold shadow-sm hover:bg-surface-container-low transition-colors"
-          >
-            {language === "en" ? "தமிழ்" : "English"}
-          </button>
         </div>
       )}
     </header>
