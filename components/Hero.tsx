@@ -17,7 +17,7 @@ export default function Hero() {
         <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-gradient-to-b from-primary-container/20 via-surface-container-low to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
         
         {/* SECTION 2: HERO */}
-        <section className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop pt-8 md:pt-12 pb-16">
+        <section className="max-w-[1280px] xl:max-w-[1440px] 2xl:max-w-[1536px] min-[1920px]:max-w-[1920px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop pt-8 md:pt-12 pb-16 transition-all duration-300">
           <div className="relative bg-gradient-to-b from-surface-container-low via-surface-container-lowest to-surface-container-lowest rounded-[28px] p-6 sm:p-8 md:p-12 lg:p-14 shadow-[0_4px_24px_rgba(20,27,36,0.06)] overflow-hidden">
             {/* Subtle Pattern Decor */}
             <div className="absolute top-0 right-0 w-80 h-80 bg-primary-container/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20"></div>

@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-inverse-surface text-inverse-on-surface pt-section-gap-sm pb-24 lg:pb-16 mt-section-gap-md">
-      <div className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
+      <div className="max-w-[1280px] xl:max-w-[1440px] 2xl:max-w-[1536px] min-[1920px]:max-w-[1920px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop transition-all duration-300">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter-desktop mb-12">
           
           <div className="lg:col-span-4 flex flex-col gap-4">

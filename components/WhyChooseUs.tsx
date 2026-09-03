@@ -7,7 +7,7 @@ export default function WhyChooseUs() {
 
   return (
     <section className="w-full bg-surface-container-low py-16" id="why-us">
-      <div className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
+      <div className="max-w-[1280px] xl:max-w-[1440px] 2xl:max-w-[1536px] min-[1920px]:max-w-[1920px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop transition-all duration-300">
         
         <div className="flex flex-col items-center text-center gap-3 mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/15 text-secondary font-label-sm text-[10px] sm:text-label-sm uppercase font-bold tracking-wide">

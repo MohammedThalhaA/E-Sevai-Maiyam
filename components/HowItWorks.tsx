@@ -6,7 +6,7 @@ export default function HowItWorks() {
   const { t } = useLanguage();
 
   return (
-    <section className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-16 md:py-20" id="how-it-works">
+    <section className="max-w-[1280px] xl:max-w-[1440px] 2xl:max-w-[1536px] min-[1920px]:max-w-[1920px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-16 md:py-20 transition-all duration-300" id="how-it-works">
       <div className="flex flex-col items-center text-center gap-3 mb-14">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-container/20 text-primary font-label-sm text-[10px] sm:text-label-sm uppercase font-bold tracking-wider">
           {t.how.tagline}

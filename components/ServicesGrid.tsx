@@ -89,7 +89,7 @@ function CategorySection({ items, metaKey, title, subtitle }: CategoryProps) {
         </div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
         {items.map((service, idx) => {
           const message = `Hi, I want to know more about: ${service.name}`;
           const whatsappUrl = `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(message)}`;
@@ -125,7 +125,7 @@ export default function ServicesGrid() {
   const { t } = useLanguage();
 
   return (
-    <section className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-12 md:py-16" id="services">
+    <section className="max-w-[1280px] xl:max-w-[1440px] 2xl:max-w-[1536px] min-[1920px]:max-w-[1920px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-12 md:py-16 transition-all duration-300" id="services">
       {/* Section Header */}
       <div className="flex flex-col items-center text-center gap-3 mb-12">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-container/20 text-primary font-label-sm text-[10px] sm:text-label-sm uppercase font-bold tracking-wider">
