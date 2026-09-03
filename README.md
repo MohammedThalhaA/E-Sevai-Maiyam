@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Harshith E Sevai Maiyam Website
 
-## Getting Started
+A modern, fast, and static website built for **Harshith E Sevai Maiyam**, a Central Govt-authorized Common Service Center in Villivakkam, Chennai.
 
-First, run the development server:
+## Tech Stack
+- Next.js 14+ (App Router)
+- TypeScript
+- Tailwind CSS
+- Lucide React (for icons)
+
+## How to Update Content
+All business data, services, and hours are centrally managed in a single file. You do not need to hunt through the code to update text.
+
+1. Open `data/site-content.ts`.
+2. Edit the corresponding fields (e.g., `business.phonePrimary` or the `services` arrays).
+3. Save the file. The site will automatically reflect the changes when you build it.
+
+### Currently Pending Info
+There are a few placeholders you should fill in inside `data/site-content.ts`:
+- **Opening Time**: `business.hours.display` currently has a `[TODO]` for the opening time.
+- **Email / Owner Name**: Add these if desired.
+
+## Running Locally
+
+To run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Building and Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is configured for a **Fully Static Export**.
 
-## Learn More
+1. Run the build command:
+```bash
+npm run build
+```
+2. Next.js will generate an `out/` folder containing the static HTML/CSS/JS files.
+3. You can deploy this `out/` folder to any static hosting provider such as:
+   - Vercel (recommended, just link the GitHub repo)
+   - Netlify
+   - Cloudflare Pages
+   - Any standard cPanel / FTP web hosting (just upload the contents of the `out` folder)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+- `app/` - Next.js routing (only `page.tsx` exists as this is a single-page site) and layout.
+- `components/` - React components for each section of the page (Hero, ServicesGrid, etc.)
+- `data/` - Contains `site-content.ts` for all textual content.
+- `public/` - Static assets (images, icons).
