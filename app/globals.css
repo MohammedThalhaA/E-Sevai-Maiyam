@@ -1,49 +1,190 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #2563EB; /* A more vibrant, modern blue */
-  --color-primary-dark: #1D4ED8;
-  --color-primary-light: #DBEAFE;
-  --color-accent: #F59E0B; /* Vibrant amber */
-  --color-accent-hover: #D97706;
-  --color-support: #10B981; /* Premium emerald */
-  
-  --color-neutral-bg: #F8FAFC; /* Slate-50 for ultra clean background */
-  --color-neutral-text: #0F172A; /* Slate-900 */
-  --color-neutral-muted: #64748B; /* Slate-500 */
+  /* Stitch AI Colors */
+  --color-surface-variant: #dce3f0;
+  --color-on-error: #ffffff;
+  --color-on-background: #151c25;
+  --color-secondary: #006d41;
+  --color-tertiary-container: #afb7c0;
+  --color-inverse-primary: #ffb955;
+  --color-inverse-surface: #2a313b;
+  --color-secondary-fixed: #90f7ba;
+  --color-on-surface-variant: #524534;
+  --color-outline: #857462;
+  --color-surface-tint: #835500;
+  --color-tertiary-fixed: #dbe3ec;
+  --color-on-primary: #ffffff;
+  --color-on-tertiary-fixed: #151c23;
+  --color-surface-container-low: #eff4ff;
+  --color-surface-container-highest: #dce3f0;
+  --color-on-primary-fixed: #291800;
+  --color-on-surface: #151c25;
+  --color-secondary-fixed-dim: #74db9f;
+  --color-error: #ba1a1a;
+  --color-on-error-container: #93000a;
+  --color-tertiary: #575f67;
+  --color-surface-container: #e8eefb;
+  --color-surface-bright: #f8f9ff;
+  --color-on-secondary-fixed: #002110;
+  --color-secondary-container: #8df5b7;
+  --color-tertiary-fixed-dim: #bfc7d0;
+  --color-on-secondary-fixed-variant: #005230;
+  --color-surface-container-high: #e2e8f5;
+  --color-surface: #f8f9ff;
+  --color-error-container: #ffdad6;
+  --color-on-tertiary-fixed-variant: #40484f;
+  --color-inverse-on-surface: #eaf1fe;
+  --color-surface-container-lowest: #ffffff;
+  --color-background: #f8f9ff;
+  --color-on-primary-container: #644000;
+  --color-on-tertiary: #ffffff;
+  --color-outline-variant: #d7c3ae;
+  --color-primary: #835500;
+  --color-primary-fixed-dim: #ffb955;
+  --color-on-tertiary-container: #40484f;
+  --color-surface-dim: #d4dae7;
+  --color-on-secondary-container: #007144;
+  --color-on-secondary: #ffffff;
+  --color-primary-fixed: #ffddb4;
+  --color-primary-container: #f5a623;
+  --color-on-primary-fixed-variant: #633f00;
 
-  --font-sans: var(--font-inter), var(--font-noto-sans-tamil), ui-sans-serif, system-ui, sans-serif;
+  /* Legacy aliases for backward compatibility with our components if needed */
+  --color-accent: #f5a623;
+  --color-accent-hover: #d97706;
+  --color-support: #006d41;
+
+  /* Stitch AI Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* Stitch AI Spacing */
+  --spacing-gutter-mobile: 1rem;
+  --spacing-margin-tablet: 2rem;
+  --spacing-card-padding-md: 1.75rem;
+  --spacing-card-padding-lg: 2.5rem;
+  --spacing-margin-mobile: 1.25rem;
+  --spacing-card-padding-sm: 1.25rem;
+  --spacing-gutter-desktop: 2rem;
+  --spacing-section-gap-sm: 3.5rem;
+  --spacing-section-gap-lg: 7.5rem;
+  --spacing-gutter-tablet: 1.5rem;
+  --spacing-margin-desktop: 3rem;
+  --spacing-section-gap-md: 5rem;
+
+  /* Typography / Fonts */
+  --font-inter: "inter", var(--font-noto-sans-tamil), sans-serif;
+  
+  --font-label-sm: var(--font-inter);
+  --font-headline-sm: var(--font-inter);
+  --font-label-md: var(--font-inter);
+  --font-body-lg: var(--font-inter);
+  --font-body-sm: var(--font-inter);
+  --font-display-hero: var(--font-inter);
+  --font-headline-lg: var(--font-inter);
+  --font-headline-lg-mobile: var(--font-inter);
+  --font-headline-md: var(--font-inter);
+  --font-display-hero-mobile: var(--font-inter);
+  --font-body-md: var(--font-inter);
 }
 
 @layer base {
-  body {
-    background-color: var(--color-neutral-bg);
-    color: var(--color-neutral-text);
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  html, body {
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
+  }
+  
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+
+  ::-webkit-scrollbar {
+    display: none; /* Stitch AI scrollbar override */
+  }
+  
+  /* Selection styling from HTML */
+  ::selection {
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary-container);
   }
 }
 
-/* Custom utility classes for premium glassmorphism and shadows */
+/* Custom Typography Utilities based on Stitch config */
 @layer utilities {
-  .glass-card {
-    @apply bg-white/70 backdrop-blur-xl border border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)];
+  .text-label-sm {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    font-weight: 600;
   }
-  
-  .glass-header {
-    @apply bg-white/80 backdrop-blur-lg border-b border-gray-100/50;
+  .text-headline-sm {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.015em;
+    font-weight: 600;
   }
-  
-  .premium-shadow {
-    @apply shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)];
+  .text-label-md {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    font-weight: 600;
   }
-  
-  .premium-shadow-hover {
-    @apply hover:shadow-[0_20px_40px_-10px_rgba(37,99,235,0.15)] hover:-translate-y-1 transition-all duration-300;
+  .text-body-lg {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.01em;
+    font-weight: 400;
   }
-  
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400;
+  .text-body-sm {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0em;
+    font-weight: 400;
+  }
+  .text-display-hero {
+    font-size: 56px;
+    line-height: 64px;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+  }
+  .text-headline-lg {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+  }
+  .text-headline-lg-mobile {
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+  .text-headline-md {
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+  .text-display-hero-mobile {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.025em;
+    font-weight: 800;
+  }
+  .text-body-md {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0em;
+    font-weight: 400;
   }
 }

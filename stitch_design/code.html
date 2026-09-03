@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#dce3f0", "on-error": "#ffffff", "on-background": "#151c25", "secondary": "#006d41", "tertiary-container": "#afb7c0", "inverse-primary": "#ffb955", "inverse-surface": "#2a313b", "secondary-fixed": "#90f7ba", "on-surface-variant": "#524534", "outline": "#857462", "surface-tint": "#835500", "tertiary-fixed": "#dbe3ec", "on-primary": "#ffffff", "on-tertiary-fixed": "#151c23", "surface-container-low": "#eff4ff", "surface-container-highest": "#dce3f0", "on-primary-fixed": "#291800", "on-surface": "#151c25", "secondary-fixed-dim": "#74db9f", "error": "#ba1a1a", "on-error-container": "#93000a", "tertiary": "#575f67", "surface-container": "#e8eefb", "surface-bright": "#f8f9ff", "on-secondary-fixed": "#002110", "secondary-container": "#8df5b7", "tertiary-fixed-dim": "#bfc7d0", "on-secondary-fixed-variant": "#005230", "surface-container-high": "#e2e8f5", "surface": "#f8f9ff", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#40484f", "inverse-on-surface": "#eaf1fe", "surface-container-lowest": "#ffffff", "background": "#f8f9ff", "on-primary-container": "#644000", "on-tertiary": "#ffffff", "outline-variant": "#d7c3ae", "primary": "#835500", "primary-fixed-dim": "#ffb955", "on-tertiary-container": "#40484f", "surface-dim": "#d4dae7", "on-secondary-container": "#007144", "on-secondary": "#ffffff", "primary-fixed": "#ffddb4", "primary-container": "#f5a623", "on-primary-fixed-variant": "#633f00" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-mobile": "1rem", "margin-tablet": "2rem", "card-padding-md": "1.75rem", "card-padding-lg": "2.5rem", "margin-mobile": "1.25rem", "card-padding-sm": "1.25rem", "gutter-desktop": "2rem", "section-gap-sm": "3.5rem", "section-gap-lg": "7.5rem", "gutter-tablet": "1.5rem", "margin-desktop": "3rem", "section-gap-md": "5rem" }, "fontFamily": { "label-sm": ["inter"], "headline-sm": ["inter"], "label-md": ["inter"], "body-lg": ["inter"], "body-sm": ["inter"], "display-hero": ["inter"], "headline-lg": ["inter"], "headline-lg-mobile": ["inter"], "headline-md": ["inter"], "display-hero-mobile": ["inter"], "body-md": ["inter"] }, "fontSize": { "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "body-sm": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "800" }], "body-md": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-4"><div class="flex items-center gap-3 shrink-0"><div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center"><span class="material-symbols-outlined text-primary text-[24px]">account_balance</span></div><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">Harshith E Sevai</span><span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wide uppercase bg-primary-container/20 text-primary">CSC</span></div><span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>Villivakkam • Open Now</span></div></div><nav class="hidden lg:flex items-center gap-1 bg-surface-container-low/70 px-3 py-1.5 rounded-full" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-full px-4 py-2"><a aria-current="page" class="transition-colors bg-primary-container text-on-primary-container font-bold rounded-full px-4 py-2" data-path="home" href="#">Services</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-4 py-2 rounded-full transition-colors" data-path="why-us" href="#">Why Us</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-4 py-2 rounded-full transition-colors" data-path="how-it-works" href="#">How It Works</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-4 py-2 rounded-full transition-colors" data-path="track-token" href="#">Live Token</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface px-4 py-2 rounded-full transition-colors" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-3"><a class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-[0_4px_12px_rgba(245,166,35,0.25)] hover:shadow-[0_6px_18px_rgba(245,166,35,0.4)] transition-all transform hover:-translate-y-0.5 active:translate-y-0" href="tel:9865070839"><span class="material-symbols-outlined text-[18px]">call</span><span>98650 70839</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Top Ambient Glow Aura -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-gradient-to-b from-primary-container/20 via-surface-container-low to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- SECTION 2: HERO -->
+<section class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop pt-8 md:pt-12 pb-16">
+<div class="relative bg-gradient-to-b from-surface-container-low via-surface-container-lowest to-surface-container-lowest rounded-[28px] p-6 sm:p-8 md:p-12 lg:p-14 shadow-[0_4px_24px_rgba(20,27,36,0.06)] overflow-hidden">
+<!-- Subtle Pattern Decor -->
+<div class="absolute top-0 right-0 w-80 h-80 bg-primary-container/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+<!-- Hero Left Column (~45%) -->
+<div class="lg:col-span-6 flex flex-col items-start gap-6">
+<!-- Eyebrow Pill Tag -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed font-label-md text-label-md font-bold tracking-wide">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span>● GOVT AUTHORIZED CSC</span>
+</div>
+<!-- Massive Bold Headline -->
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero font-extrabold text-on-surface tracking-tight leading-[1.08]">
+              Your Services. <br/>
+<span class="text-primary-container drop-shadow-sm">Handled Fast.</span>
+</h1>
+<!-- Slate Gray Subtext -->
+<p class="font-body-lg text-body-md md:text-body-lg text-tertiary max-w-xl">
+              Certificates, Aadhaar/PAN updates, utility bill payments, high-speed printing, and insurance — all handled quickly, accurately, and reliably in Villivakkam.
+            </p>
+<!-- CTA Pill Buttons Side by Side -->
+<div class="flex flex-wrap items-center gap-3.5 w-full sm:w-auto">
+<a class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-[0_4px_16px_rgba(245,166,35,0.3)] hover:shadow-[0_8px_24px_rgba(245,166,35,0.45)] hover:-translate-y-0.5 transition-all" href="tel:9865070839">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span>Call Now</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-surface-container-lowest text-secondary font-label-md text-label-md font-bold shadow-sm hover:bg-secondary/10 transition-all" href="https://wa.me/919865070839?text=Vanakkam%20Harshith%20E%20Sevai,%20I%20need%20help%20with%20government%20services." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>WhatsApp Us</span>
+</a>
+</div>
+<!-- Trust Strip -->
+<div class="pt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5 font-semibold text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Govt Authorized CSC</span>
+</div>
+<span class="text-tertiary-container">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary">schedule</span>
+<span>Closes 9:00 PM</span>
+</div>
+<span class="text-tertiary-container">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">location_on</span>
+<span>Near Villivakkam Bus Terminus</span>
+</div>
+</div>
+</div>
+<!-- Hero Right Column (~55% SaaS-style Cluster) -->
+<div class="lg:col-span-6 relative flex items-center justify-center min-h-[380px] sm:min-h-[440px]">
+<!-- Orbiting Decorative Rings (Subtle) -->
+<div class="absolute w-[360px] h-[360px] rounded-full bg-surface-container/60 -z-10"></div>
+<div class="absolute w-[460px] h-[460px] rounded-full bg-surface-container-high/30 -z-10"></div>
+<!-- Central Card: Official Resident ID / E-Sevai Portal Graphic -->
+<div class="w-full max-w-[340px] bg-surface-container-lowest rounded-2xl p-6 shadow-[0_16px_36px_-6px_rgba(20,27,36,0.12)] z-10">
+<div class="flex items-center justify-between pb-4">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]">badge</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm font-bold text-on-surface">E-GOVERNANCE PORTAL</span>
+<span class="block text-[10px] text-tertiary">CSC TN e-District Live Hub</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-secondary/10 text-secondary text-[11px] font-bold">VERIFIED</span>
+</div>
+<!-- Sleek Card Mock Body -->
+<div class="bg-surface-container-low rounded-xl p-4 flex flex-col gap-3 my-2">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-variant flex items-center justify-center font-bold text-tertiary text-headline-sm">
+                    TN
+                  </div>
+<div class="flex flex-col gap-1 w-full">
+<div class="h-3 bg-surface-container-highest rounded-full w-4/5"></div>
+<div class="h-2.5 bg-surface-container-high rounded-full w-2/3"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-2 text-[11px]">
+<div class="bg-surface-container-lowest p-2 rounded-lg">
+<span class="text-tertiary block font-mono">APP #</span>
+<span class="font-bold text-on-surface">TN-CSC-2025</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded-lg">
+<span class="text-tertiary block font-mono">STATUS</span>
+<span class="font-bold text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Instant
+                    </span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] text-tertiary pt-2">
+<span class="font-semibold text-on-surface-variant">Villivakkam Citizen Counter #01</span>
+<span class="font-mono text-primary font-bold">● FAST TRACK</span>
+</div>
+</div>
+<!-- Orbiting Floating Badges (5 total) -->
+<!-- 1. WhatsApp Chat Bubble Badge (Top-Right) -->
+<div class="absolute -top-3 right-4 sm:right-8 bg-surface-container-lowest rounded-2xl px-4 py-2.5 shadow-[0_8px_20px_rgba(0,109,65,0.12)] flex items-center gap-2.5 z-20 animate-bounce [animation-duration:3s]">
+<div class="w-8 h-8 rounded-xl bg-secondary/15 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[20px]">chat</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Instant WhatsApp Support</span>
+<span class="text-[11px] text-secondary font-medium">Send Documents Now</span>
+</div>
+</div>
+<!-- 2. Rupee / UPI Payment Badge (Bottom-Right) -->
+<div class="absolute bottom-2 right-2 sm:right-6 bg-surface-container-lowest rounded-2xl px-4 py-2.5 shadow-[0_8px_20px_rgba(245,166,35,0.18)] flex items-center gap-2.5 z-20">
+<div class="w-8 h-8 rounded-xl bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]">currency_rupee</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Zero-Delay Payments</span>
+<span class="text-[11px] text-tertiary">EB, Taxes, UPI Accepted</span>
+</div>
+</div>
+<!-- 3. High-precision Laser Printer Badge (Top-Left) -->
+<div class="absolute top-6 left-0 sm:left-4 bg-surface-container-lowest rounded-2xl px-3.5 py-2 shadow-[0_8px_20px_rgba(20,27,36,0.08)] flex items-center gap-2 z-20">
+<div class="w-8 h-8 rounded-xl bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]">print</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Color & PVC Print</span>
+<span class="text-[11px] text-tertiary">300 DPI Thermal Quality</span>
+</div>
+</div>
+<!-- 4. Flight / Travel Ticket Booking Badge (Bottom-Left) -->
+<div class="absolute -bottom-4 left-4 sm:left-10 bg-surface-container-lowest rounded-2xl px-3.5 py-2 shadow-[0_8px_20px_rgba(20,27,36,0.08)] flex items-center gap-2 z-20">
+<div class="w-8 h-8 rounded-xl bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed text-[20px]">airplane_ticket</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">IRCTC & Flights</span>
+<span class="text-[11px] text-tertiary">Confirmed PNR Booking</span>
+</div>
+</div>
+<!-- 5. Shield / Insurance Badge (Center-Right Floating) -->
+<div class="hidden sm:flex absolute top-1/2 -right-4 -translate-y-1/2 bg-surface-container-lowest rounded-2xl px-3 py-2 shadow-[0_8px_20px_rgba(0,109,65,0.1)] items-center gap-2 z-20">
+<div class="w-8 h-8 rounded-xl bg-secondary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Motor Insurance</span>
+<span class="text-[10px] text-secondary font-semibold">Instant Policy Print</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro-detail bottom strip inside Hero Card -->
+<div class="mt-8 pt-6 flex items-center justify-between text-tertiary font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>Serving Villivakkam, Kolathur, Anna Nagar & Agaram</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-highest"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-highest"></span>
+<span class="font-mono text-[11px] ml-1 text-on-surface-variant">CSC ID #63402</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- SECTION 3: SERVICES GRID (THE CORE SECTION) -->
+<section class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-12 md:py-16" id="services">
+<!-- Section Header -->
+<div class="flex flex-col items-center text-center gap-3 mb-12">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-container/15 text-on-primary-container font-label-sm text-label-sm uppercase font-bold tracking-wider">
+        Central & Tamil Nadu Citizen Desk
+      </div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-surface tracking-tight">
+        What We Offer
+      </h2>
+<p class="font-body-lg text-body-md md:text-body-lg text-tertiary max-w-2xl">
+        Comprehensive government citizen services and digital solutions under one roof with fast turnaround and verified compliance.
+      </p>
+<!-- Category Filter Quick Pills -->
+<div class="flex flex-wrap items-center justify-center gap-2 pt-4">
+<a class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:text-on-surface transition-colors" href="#cat-certificates">Government Certificates</a>
+<a class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:text-on-surface transition-colors" href="#cat-identity">Identity & Documents</a>
+<a class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:text-on-surface transition-colors" href="#cat-bills">Bills & Payments</a>
+<a class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:text-on-surface transition-colors" href="#cat-welfare">Employment & Welfare</a>
+<a class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:text-on-surface transition-colors" href="#cat-insurance">Insurance & Travel</a>
+<a class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold hover:bg-primary-container hover:text-on-surface transition-colors" href="#cat-xerox">Printing & Xerox</a>
+</div>
+</div>
+<!-- Category 1: Government Certificates -->
+<div class="mb-14 scroll-mt-24" id="cat-certificates">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[22px]">assignment</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">1. Government Certificates</h3>
+<p class="font-body-sm text-body-sm text-tertiary">Tamil Nadu Revenue & Social Welfare Department documentation</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Community / Caste Certificate -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-[24px]">diversity_3</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Caste & Community Certificate</h4>
+<p class="font-body-sm text-body-sm text-tertiary">SC, ST, BC, MBC certificate applications through the official TN e-District portal.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20want%20to%20apply%20for%20a%20Community/Caste%20Certificate" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Income Certificate -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-[24px]">payments</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Income Certificate</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Essential for college scholarships, fee waivers, and government welfare scheme validation.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20an%20Income%20Certificate" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Legal Heir Certificate -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-[24px]">family_restroom</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Legal Heir Certificate</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Accurate Tahsildar filing with family genealogy affidavits and document screening.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20assistance%20with%20Legal%20Heir%20Certificate" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Residence & Nativity Certificate -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-[24px]">home_pin</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Residence / Nativity Certificate</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Proof of domicile in Chennai / Tamil Nadu for admission and state quota recruitments.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20a%20Residence%20or%20Nativity%20Certificate" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Widow Certificate & OBC Certificate -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-[24px]">workspace_premium</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Widow & Central OBC Certificates</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Pavitra / Widow assistance filing & Central Non-Creamy Layer (NCL) certificate support.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20OBC%20NCL%20or%20Widow%20Certificate%20help" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Birth/Death & Jeevan Pramaan -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-[24px]">fingerprint</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Birth/Death & Life Certificate</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Municipal birth/death copies and Jeevan Pramaan biometric digital certificate for pensioners.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20Jeevan%20Pramaan%20Life%20Certificate%20or%20Birth%20Certificate" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Category 2: Identity & Documents -->
+<div class="mb-14 scroll-mt-24" id="cat-identity">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[22px]">contact_mail</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">2. Identity & Documents</h3>
+<p class="font-body-sm text-body-sm text-tertiary">Central and state statutory ID enrollment, correction & physical PVC cards</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Aadhaar Card Updates & Print -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-[24px]">credit_card</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Aadhaar Card Update & PVC Print</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Address changes, phone/email seeding guidance, e-Aadhaar download, and heavy-duty PVC cards.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20Aadhaar%20card%20update%20or%20print" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- PAN Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-[24px]">account_box</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">PAN Card (New & Correction)</h4>
+<p class="font-body-sm text-body-sm text-tertiary">NSDL & UTI authorized agent. Form 49A, photo/signature fixes, and lost PAN re-issuance.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20want%20to%20apply%20or%20correct%20my%20PAN%20card" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Voter ID Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-[24px]">how_to_vote</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Voter ID (NVSP Portal)</h4>
+<p class="font-body-sm text-body-sm text-tertiary">New voter enrollment (Form 6), constituency shift (Form 8), and instant color EPIC download.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20help%20with%20Voter%20ID%20services" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Smart Ration Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-[24px]">receipt_long</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Smart Ration Card (TNPDS)</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Member addition/deletion, family head change, fair price shop transfer, and duplicate print.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20Smart%20Ration%20Card%20services" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Passport Seva -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-[24px]">travel_explore</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Passport Application & Slot Booking</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Fresh & renewal applications, Tatkal slot allocation, document pre-scrutiny for PSK Saligramam/Aminjikarai.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20help%20with%20Passport%20Application%20and%20Slot%20Booking" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- MSME / Udyam & PVC Cards -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-[24px]">store</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">MSME / Udyam & PVC Printing</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Official Udyam registration for shops/enterprises + High gloss waterproof PVC cards for all IDs.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20Udyam%20Registration%20or%20PVC%20Card%20Printing" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Category 3: Bills & Payments -->
+<div class="mb-14 scroll-mt-24" id="cat-bills">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[22px]">receipt</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">3. Bills & Utility Payments</h3>
+<p class="font-body-sm text-body-sm text-tertiary">Instant payment receipts with zero gateway failures</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- TNEB Electricity Bill -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-[24px]">bolt</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">TNEB Electricity Bill</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Domestic & commercial bill settlements. Immediate official computer receipt provided.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20want%20to%20pay%20my%20TNEB%20Bill" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Chennai Corporation Property Tax -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-[24px]">apartment</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Chennai Corporation Property Tax</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Greater Chennai Corporation Zone 8 (Villivakkam/Anna Nagar) property tax clearance.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20want%20to%20pay%20Property%20Tax" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Water Tax, Challan & Transfers -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-[24px]">water_drop</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Water Tax, E-Challan & DMT</h4>
+<p class="font-body-sm text-body-sm text-tertiary">CMWSSB water/sewerage tax, Chennai Traffic fine clearance, and national NEFT/IMPS transfers.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20help%20with%20Water%20Tax%20or%20Traffic%20Challan%20payment" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Category 4: Employment & Welfare -->
+<div class="mb-14 scroll-mt-24" id="cat-welfare">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[22px]">work</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">4. Employment & Welfare</h3>
+<p class="font-body-sm text-body-sm text-tertiary">Government portal enrollments and social security disbursements</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- TN Employment Exchange -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-[24px]">school</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">TN Employment Exchange</h4>
+<p class="font-body-sm text-body-sm text-tertiary">New registration, qualification addition, renewal, and seniority card maintenance.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20TN%20Employment%20Exchange%20registration" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- EPFO PF Advance & Claim -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-[24px]">savings</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">EPFO PF Advance & Claim</h4>
+<p class="font-body-sm text-body-sm text-tertiary">KYC seeding, Form 19/10C/31 withdrawal requests, UAN activation, and passbook checking.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20help%20with%20PF%20withdrawal%20or%20claim" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Police Verification Certificate -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-[24px]">local_police</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Police Verification Certificate</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Official TN Police clearance certificate (PVR) filing for job screening, tenants, and taxi drivers.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20a%20Police%20Verification%20Certificate" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Category 5: Insurance & Travel -->
+<div class="mb-14 scroll-mt-24" id="cat-insurance">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[22px]">shield</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">5. Insurance & Travel Booking</h3>
+<p class="font-body-sm text-body-sm text-tertiary">Comprehensive vehicle coverage & seamless transit reservations</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Motor Vehicle Insurance -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-[24px]">two_wheeler</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Two-Wheeler & Four-Wheeler Insurance</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Instant renewal for bikes, scooters, cars, and commercial vehicles. Zero inspection third-party cover.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20Vehicle%20Insurance%20quote" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- IRCTC Train & Bus Ticket -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-[24px]">train</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">IRCTC Train & SETC Bus Bookings</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Authorized IRCTC agent reservation with Tatkal slot assistance and state omnibus seats.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20want%20to%20book%20train%20or%20bus%20tickets" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Domestic & Flight Booking -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-[24px]">flight_takeoff</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Flight Booking (Domestic & Int.)</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Lowest fare comparisons across IndiGo, Air India, and Gulf routes with web check-in & baggage add-ons.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20flight%20ticket%20booking" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Category 6: Printing & Xerox -->
+<div class="mb-4 scroll-mt-24" id="cat-xerox">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[22px]">print</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">6. Printing & Xerox Studio</h3>
+<p class="font-body-sm text-body-sm text-tertiary">High-speed commercial documentation, color scans & pouch lamination</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- High-speed B&W Xerox -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-[24px]">file_copy</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">High-Speed B&W Xerox</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Crisp, duplex photocopying for legal papers, school projects, and voluminous sets at bulk rates.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20have%20a%20bulk%20Xerox/Printing%20requirement" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Vibrant Colour Printouts & Scanning -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-[24px]">photo_library</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Color Prints & HD Scanning</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Photo glossy prints, multi-page PDF generation from WhatsApp, and crystal clear scanning.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20Color%20Prints%20or%20HD%20Scanning" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Heavy Duty Thermal Lamination -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col justify-between">
+<div>
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-[24px]">layers</span>
+</div>
+<h4 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Thermal Lamination & Spiral Binding</h4>
+<p class="font-body-sm text-body-sm text-tertiary">125-micron waterproof heat sealed lamination for marks cards, certificates, and ID cards.</p>
+</div>
+<a class="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" href="https://wa.me/919865070839?text=Hi,%20I%20need%20Document%20Lamination%20service" target="_blank">
+            Ask about this <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: WHY CHOOSE US -->
+<section class="w-full bg-surface-container-low py-16" id="why-us">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
+<div class="flex flex-col items-center text-center gap-3 mb-12">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm uppercase font-bold tracking-wide">
+          Villivakkam's Most Trusted Counter
+        </div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-surface tracking-tight">
+          Why Choose Harshith E Sevai?
+        </h2>
+<p class="font-body-lg text-body-md md:text-body-lg text-tertiary max-w-xl">
+          We combine authenticated government agency with the welcoming speed of a neighborhood digital cafe.
+        </p>
+</div>
+<!-- 4 Clean Mini-Cards in a Horizontal Grid Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- 1. Govt-Authorized Center -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[26px]">verified_user</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Govt-Authorized Center</h3>
+<p class="font-body-sm text-body-sm text-tertiary leading-relaxed">
+              Certified CSC operator with direct, authenticated portal credentials for Tamil Nadu and Central databases.
+            </p>
+</div>
+</div>
+<!-- 2. Fast Turnaround -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[26px]">speed</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Fast Turnaround</h3>
+<p class="font-body-sm text-body-sm text-tertiary leading-relaxed">
+              Zero waiting on sluggish queues. Swift processing with several certificates and utility receipts delivered same-day.
+            </p>
+</div>
+</div>
+<!-- 3. Transparent Pricing -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[26px]">price_check</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Transparent Pricing</h3>
+<p class="font-body-sm text-body-sm text-tertiary leading-relaxed">
+              Strict adherence to standardized government departmental rates with clear breakdown and digital receipts.
+            </p>
+</div>
+</div>
+<!-- 4. Friendly Local Staff -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[26px]">support_agent</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Friendly Local Staff</h3>
+<p class="font-body-sm text-body-sm text-tertiary leading-relaxed">
+              Warm, bilingual guidance in Tamil (தமிழ்) and English. End-to-end help with documentation from start to finish.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: HOW IT WORKS -->
+<section class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-16 md:py-20" id="how-it-works">
+<div class="flex flex-col items-center text-center gap-3 mb-14">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-container/20 text-on-primary-container font-label-sm text-label-sm uppercase font-bold tracking-wider">
+        Effortless 3-Step Flow
+      </div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-surface tracking-tight">
+        How It Works
+      </h2>
+<p class="font-body-lg text-body-md md:text-body-lg text-tertiary max-w-xl">
+        Skip the government office queues in 3 easy steps.
+      </p>
+</div>
+<!-- 3-Step Streamlined Process Strip with Connecting Lines -->
+<div class="relative grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Background Connecting Line (Desktop) -->
+<div class="hidden md:block absolute top-10 left-[15%] right-[15%] h-0.5 bg-surface-container-highest z-0"></div>
+<!-- Step 1 -->
+<div class="relative flex flex-col items-center text-center gap-4 z-10">
+<div class="w-20 h-20 rounded-full bg-primary-container text-on-surface flex items-center justify-center font-display-hero text-[28px] font-extrabold shadow-[0_8px_20px_rgba(245,166,35,0.35)]">
+          1
+        </div>
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm w-full flex flex-col items-center gap-2">
+<span class="font-headline-sm text-[18px] font-bold text-on-surface">Visit or Call/WhatsApp</span>
+<p class="font-body-sm text-body-sm text-tertiary">
+            Tell us what document or service you need. We verify eligibility and list required proof immediately.
+          </p>
+<span class="inline-flex items-center gap-1 text-[12px] font-semibold text-primary pt-2">
+<span class="material-symbols-outlined text-[16px]">touch_app</span> Walk-in or Chat
+          </span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative flex flex-col items-center text-center gap-4 z-10">
+<div class="w-20 h-20 rounded-full bg-primary-container text-on-surface flex items-center justify-center font-display-hero text-[28px] font-extrabold shadow-[0_8px_20px_rgba(245,166,35,0.35)]">
+          2
+        </div>
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm w-full flex flex-col items-center gap-2">
+<span class="font-headline-sm text-[18px] font-bold text-on-surface">Submit Documents</span>
+<p class="font-body-sm text-body-sm text-tertiary">
+            Bring physical documents to our Villivakkam desk or simply share photos via WhatsApp securely.
+          </p>
+<span class="inline-flex items-center gap-1 text-[12px] font-semibold text-secondary pt-2">
+<span class="material-symbols-outlined text-[16px]">lock</span> 100% Data Confidentiality
+          </span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative flex flex-col items-center text-center gap-4 z-10">
+<div class="w-20 h-20 rounded-full bg-primary-container text-on-surface flex items-center justify-center font-display-hero text-[28px] font-extrabold shadow-[0_8px_20px_rgba(245,166,35,0.35)]">
+          3
+        </div>
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm w-full flex flex-col items-center gap-2">
+<span class="font-headline-sm text-[18px] font-bold text-on-surface">Get It Done — Fast</span>
+<p class="font-body-sm text-body-sm text-tertiary">
+            We file in the portal, track status, and hand over your authentic certificate, acknowledgement, or PVC card.
+          </p>
+<span class="inline-flex items-center gap-1 text-[12px] font-semibold text-primary pt-2">
+<span class="material-symbols-outlined text-[16px]">done_all</span> Often Same-Day
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: CONTACT & LOCATION -->
+<section class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-12 md:py-16" id="contact">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Center Details & Quick Inquiry Form -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Address & Timings Card -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-2 mb-6 pb-6">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider block">Walk-in Today</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Harshith E Sevai Maiyam</h3>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>Open Daily · Closes 9:00 PM</span>
+</div>
+</div>
+<div class="flex flex-col gap-4 text-on-surface">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed/50 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary text-[22px]">location_on</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Address & Landmark</span>
+<p class="font-body-sm text-body-sm text-tertiary">
+                  85/67, S Mada St, near Faith Hospital, Villivakkam, Chennai 600049 — near Villivakkam Bus Terminus.
+                </p>
+</div>
+</div>
+<!-- Tap to Call Buttons & WhatsApp -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+<a class="flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-surface-container-low text-on-surface hover:bg-primary-container font-label-md text-label-md font-bold transition-all shadow-sm" href="tel:9865070839">
+<span class="material-symbols-outlined text-primary text-[20px]">call</span>
+<span>98650 70839</span>
+</a>
+<a class="flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-surface-container-low text-on-surface hover:bg-primary-container font-label-md text-label-md font-bold transition-all shadow-sm" href="tel:8760914231">
+<span class="material-symbols-outlined text-primary text-[20px]">call</span>
+<span>87609 14231</span>
+</a>
+</div>
+<div class="flex flex-wrap gap-3 pt-1">
+<a class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-secondary text-on-secondary font-label-md text-label-md font-bold shadow-sm hover:opacity-90 transition-all" href="https://wa.me/919865070839?text=Hi%20Harshith%20E%20Sevai,%20I%20have%20an%20inquiry." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>WhatsApp Us</span>
+</a>
+<a class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-bold hover:bg-surface-variant transition-all" href="https://maps.google.com/?q=85/67,+S+Mada+St,+Villivakkam,+Chennai+600049" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">directions</span>
+<span>Get Directions</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Quick Inquiry Form Card -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-sm">
+<div class="mb-5">
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Quick Online Inquiry</h4>
+<p class="font-body-sm text-body-sm text-tertiary">Need documents urgently? Leave a note and we will reply within 10 minutes.</p>
+</div>
+<form class="flex flex-col gap-4" id="inquiryForm" onsubmit="event.preventDefault(); document.getElementById('formSuccess').classList.remove('hidden'); this.reset();">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface-variant" for="name">Your Full Name</label>
+<input class="h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="name" placeholder="e.g. S. Murugan" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface-variant" for="phone">Mobile Number</label>
+<input class="h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="phone" placeholder="e.g. 98401 23456" required="" type="tel"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface-variant" for="serviceSelect">Service Needed</label>
+<select class="h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container" id="serviceSelect">
+<option value="certificates">TN Government Certificates (Caste/Income/Legal Heir)</option>
+<option value="aadhaar-pan">Aadhaar / PAN Card Services & PVC Print</option>
+<option value="voter-ration">Voter ID / Smart Ration Card Services</option>
+<option value="passport">Passport Seva Application & Slot</option>
+<option value="bills-tax">TNEB / Property Tax / Utility Bills</option>
+<option value="epfo-employment">PF Withdrawal (EPFO) / Employment Reg.</option>
+<option value="insurance-travel">Motor Insurance / Train & Flight Booking</option>
+<option value="xerox-prints">Bulk Xerox / Color Scanning / Lamination</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface-variant" for="msg">Your Requirement (Optional)</label>
+<textarea class="p-3.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="msg" placeholder="Tell us if you have soft copies ready or urgent deadlines..." rows="3"></textarea>
+</div>
+<button class="w-full h-12 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-[0_4px_14px_rgba(245,166,35,0.3)] hover:shadow-[0_6px_20px_rgba(245,166,35,0.45)] transition-all" type="submit">
+              Submit Inquiry
+            </button>
+<div class="hidden text-center p-3 bg-secondary-fixed/40 text-on-secondary-fixed-variant rounded-xl font-label-sm text-label-sm font-bold" id="formSuccess">
+              ✓ Message Sent! We will contact you shortly on WhatsApp or phone call.
+            </div>
+</form>
+</div>
+</div>
+<!-- Right Column: Stylized Interactive Map Card -->
+<div class="lg:col-span-5 flex flex-col gap-4 sticky top-28">
+<div class="bg-surface-container-lowest rounded-3xl p-5 shadow-sm">
+<div class="flex items-center justify-between mb-3 px-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">explore</span>
+<span class="font-headline-sm text-[16px] font-bold text-on-surface">Neighborhood Landmark Map</span>
+</div>
+<a class="px-3 py-1 rounded-full bg-primary-fixed/60 text-on-primary-fixed text-label-sm font-label-sm font-bold hover:bg-primary-container transition-colors" href="https://maps.google.com/?q=85/67,+S+Mada+St,+Villivakkam,+Chennai+600049" rel="noopener noreferrer" target="_blank">
+              Open in Google Maps
+            </a>
+</div>
+<!-- Stylized Google Map Placeholder Container with data-location -->
+<div class="w-full h-72 sm:h-96 rounded-2xl relative overflow-hidden bg-cover bg-center shadow-inner flex flex-col justify-end p-4" data-location="85/67, S Mada St, Villivakkam, Chennai, Tamil Nadu 600049" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAxxN2ze35nrCgr0nQJSpQd-ktCm-OXoAsD08MuS66E-UOoGI9ddktkVDLWYZglXQHTvgPu5l5XNe7lK-MsSRUx0z-cfFEtoAq0wXIdhpLAkp-znd-OnRqsd8BUxYYgAyxjISfRR0IwVcmxaPbmFoopWmsICMdiMSgiuf16TB0Pbnm0_HZ963I-G3wysEBy8B4Yp9y1BrJP2ibBcoCNPZiB84-zxGMOjQh0-CtfevLKOiJCEqtTwRmGUQ')">
+<!-- Semi-transparent Landmark Scrim -->
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+<!-- Floating Landmark Pills -->
+<div class="relative z-10 flex flex-col gap-2">
+<!-- Pin: Harshith E Sevai -->
+<div class="self-start bg-surface-container-lowest/95 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-md flex items-center gap-2.5">
+<span class="w-3 h-3 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">📍 Harshith E Sevai Maiyam (Center)</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<!-- Landmark 1: Faith Hospital -->
+<div class="bg-inverse-surface/80 text-inverse-on-surface backdrop-blur-sm px-2.5 py-1 rounded-lg text-[11px] font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-error-container">local_hospital</span>
+<span>Near Faith Hospital</span>
+</div>
+<!-- Landmark 2: Villivakkam Bus Terminus -->
+<div class="bg-inverse-surface/80 text-inverse-on-surface backdrop-blur-sm px-2.5 py-1 rounded-lg text-[11px] font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary-fixed">directions_bus</span>
+<span>Villivakkam Bus Terminus (2 mins walk)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Directions Footer Note -->
+<div class="mt-4 p-3.5 rounded-2xl bg-surface-container-low flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">local_parking</span>
+              Two-wheeler parking available in front
+            </span>
+<span class="font-bold text-primary">Pin: 600049</span>
+</div>
+</div>
+<!-- Live Status Counter Widget -->
+<div class="bg-gradient-to-r from-primary-fixed/40 to-surface-container-low rounded-3xl p-6 shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Today's Token Traffic</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Tokens Serving Fast</span>
+<span class="font-body-sm text-body-sm text-tertiary">Average wait time: ~6 mins</span>
+</div>
+<div class="w-14 h-14 rounded-2xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-sm">
+<span class="font-display-hero text-[20px] font-bold text-secondary">06</span>
+<span class="text-[10px] text-tertiary uppercase font-bold">Mins</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mobile Sticky Bottom Bar for instant interaction -->
+<div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 p-3 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.08)] flex items-center gap-2.5">
+<a class="flex-1 flex items-center justify-center gap-2 h-12 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-md" href="tel:9865070839">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span>Call Desk</span>
+</a>
+<a class="flex-1 flex items-center justify-center gap-2 h-12 rounded-full bg-secondary text-on-secondary font-label-md text-label-md font-bold shadow-md" href="https://wa.me/919865070839?text=Vanakkam%20Harshith%20E%20Sevai,%20I%20need%20assistance." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>WhatsApp</span>
+</a>
+</div>
+</div></main><footer class="w-full bg-inverse-surface text-inverse-on-surface pt-section-gap-sm pb-24 lg:pb-16 mt-section-gap-md"><div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter-desktop mb-12"><div class="lg:col-span-4 flex flex-col gap-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-surface-container-high/10 flex items-center justify-center"><span class="material-symbols-outlined text-primary-fixed-dim text-[24px]">verified</span></div><div><h3 class="font-headline-sm text-headline-sm font-bold text-surface-container-lowest tracking-tight">Harshith E Sevai Maiyam</h3><p class="font-label-sm text-label-sm text-primary-fixed-dim">ஹர்ஷித் இ-சேவை மையம்</p></div></div><p class="font-body-sm text-body-sm text-tertiary-container max-w-sm">Authorized Common Service Center (CSC) offering swift, frictionless Tamil Nadu e-Governance and Central citizen services right here in Villivakkam.</p><div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/20 text-secondary-fixed text-label-sm font-label-sm self-start"><span class="material-symbols-outlined text-[16px]">verified_user</span><span>Central Govt Authorized CSC • Digital India</span></div></div><div class="lg:col-span-3 flex flex-col gap-3"><h4 class="font-label-md text-label-md uppercase tracking-wider text-surface-container-lowest font-bold">Citizen Services</h4><ul class="flex flex-col gap-2.5 font-body-sm text-body-sm text-tertiary-container"><li><a class="hover:text-primary-fixed-dim transition-colors" href="#">Aadhaar Enrolment & Update</a></li><li><a class="hover:text-primary-fixed-dim transition-colors" href="#">Patta & Chitta / EC Online</a></li><li><a class="hover:text-primary-fixed-dim transition-colors" href="#">Income & Community Certificates</a></li><li><a class="hover:text-primary-fixed-dim transition-colors" href="#">Voter ID & Passport Seva</a></li><li><a class="hover:text-primary-fixed-dim transition-colors" href="#">TNEB & Property Tax Payments</a></li></ul></div><div class="lg:col-span-2 flex flex-col gap-3"><h4 class="font-label-md text-label-md uppercase tracking-wider text-surface-container-lowest font-bold">Center Timings</h4><div class="flex flex-col gap-2 font-body-sm text-body-sm text-tertiary-container"><p><span class="font-label-sm text-surface-container-lowest block">Mon – Sat</span>09:00 AM – 09:00 PM</p><p><span class="font-label-sm text-surface-container-lowest block">Sunday</span>10:00 AM – 03:00 PM</p><span class="inline-flex items-center gap-1.5 text-secondary-fixed text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>Active Live Tokens</span></div></div><div class="lg:col-span-3 flex flex-col gap-3"><h4 class="font-label-md text-label-md uppercase tracking-wider text-surface-container-lowest font-bold">Center Address</h4><div class="flex flex-col gap-3 font-body-sm text-body-sm text-tertiary-container"><div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-primary-fixed text-[20px] shrink-0 mt-0.5">location_on</span><p>No. 42, S Mada St, Near Bus Terminus, Villivakkam, Chennai, Tamil Nadu 600049</p></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary-fixed text-[20px] shrink-0">call</span><a class="hover:text-surface-container-lowest transition-colors" href="tel:9865070839">+91 98650 70839</a></div><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary-fixed text-[20px] shrink-0">mail</span><span class="hover:text-surface-container-lowest">harshithesevai@gmail.com</span></div></div></div></div><div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-tertiary-container"><p>© 2025 Harshith E Sevai Maiyam • CSC Villivakkam. All rights reserved.</p><div class="flex items-center gap-6 font-label-sm text-label-sm"><a class="hover:text-surface-container-lowest transition-colors" href="#">Privacy Policy</a><a class="hover:text-surface-container-lowest transition-colors" href="#">CSC Terms of Service</a><a class="hover:text-surface-container-lowest transition-colors" href="#">Tamil Nadu e-Sevai Directory</a></div></div></div></footer><div class="lg:hidden fixed bottom-4 left-4 right-4 z-40"><div class="bg-surface-container-lowest/95 backdrop-blur-md rounded-full px-4 py-2.5 shadow-[0_10px_25px_-5px_rgba(20,27,36,0.15)] flex items-center justify-between gap-3"><div class="flex items-center gap-2 pl-2"><span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface font-bold">Open in Villivakkam</span></div><a class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-md" href="tel:9865070839"><span class="material-symbols-outlined text-[18px]">call</span><span>Call Now</span></a></div></div></body></html>

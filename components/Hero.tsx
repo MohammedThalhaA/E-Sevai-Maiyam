@@ -1,88 +1,211 @@
 "use client";
 
-import { FaWhatsapp } from "react-icons/fa";
-import { Phone, ShieldCheck, Clock, MapPin } from "lucide-react";
 import { business } from "../data/site-content";
-import FadeIn from "./FadeIn";
 
 export default function Hero() {
-  const whatsappUrl = `https://wa.me/${business.whatsapp}?text=Hi, I want to know more about your services.`;
+  const whatsappMsg = "Vanakkam Harshith E Sevai, I need help with government services.";
+  const whatsappUrl = `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(whatsappMsg)}`;
 
   return (
-    <section className="relative pt-24 pb-32 md:pt-32 md:pb-40 overflow-hidden bg-neutral-bg">
-      {/* Premium Background Elements */}
-      <div className="absolute top-0 inset-x-0 h-[500px] bg-gradient-to-b from-primary/5 to-transparent z-0" />
-      <div className="absolute top-20 right-0 md:right-[10%] w-[30rem] h-[30rem] bg-blue-400/20 rounded-full blur-3xl z-0" />
-      <div className="absolute top-40 left-0 md:left-[10%] w-[25rem] h-[25rem] bg-accent/15 rounded-full blur-3xl z-0" />
-
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          
-          <FadeIn delay={0.1}>
-            <div className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full bg-white/80 backdrop-blur-md border border-primary/10 shadow-sm text-primary font-bold text-sm">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
-              </span>
-              {business.tagline}
-            </div>
-          </FadeIn>
-          
-          <FadeIn delay={0.2}>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-neutral-text leading-tight mb-6 tracking-tight">
-              Your One-Stop <span className="text-gradient">Government</span> & Digital Service Center
-            </h1>
-          </FadeIn>
-          
-          <FadeIn delay={0.3}>
-            <p className="text-lg md:text-xl text-neutral-muted mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
-              Get your certificates, Aadhaar/PAN services, bill payments, and insurance done fast, reliably, and locally in Villivakkam.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={0.4} direction="up">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-              <a 
-                href={`tel:+91${business.phonePrimary}`}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all shadow-lg hover:shadow-[0_10px_25px_rgba(37,99,235,0.4)] hover:-translate-y-1"
-              >
-                <Phone size={20} />
-                Call Now
-              </a>
+    <div className="flex flex-col w-full relative pt-20">
+      {/* Top Ambient Glow Aura */}
+      <div className="relative w-full overflow-hidden">
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-gradient-to-b from-primary-container/20 via-surface-container-low to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+        
+        {/* SECTION 2: HERO */}
+        <section className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop pt-8 md:pt-12 pb-16">
+          <div className="relative bg-gradient-to-b from-surface-container-low via-surface-container-lowest to-surface-container-lowest rounded-[28px] p-6 sm:p-8 md:p-12 lg:p-14 shadow-[0_4px_24px_rgba(20,27,36,0.06)] overflow-hidden">
+            {/* Subtle Pattern Decor */}
+            <div className="absolute top-0 right-0 w-80 h-80 bg-primary-container/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20"></div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+              {/* Hero Left Column (~45%) */}
+              <div className="lg:col-span-6 flex flex-col items-start gap-6">
+                {/* Eyebrow Pill Tag */}
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed font-label-md text-label-md font-bold tracking-wide">
+                  <span className="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+                  <span>● {business.tagline.toUpperCase()}</span>
+                </div>
+                
+                {/* Massive Bold Headline */}
+                <h1 className="font-display-hero text-display-hero-mobile md:text-display-hero font-extrabold text-on-surface tracking-tight leading-[1.08]">
+                  Your Services. <br/>
+                  <span className="text-primary-container drop-shadow-sm">Handled Fast.</span>
+                </h1>
+                
+                {/* Slate Gray Subtext */}
+                <p className="font-body-lg text-body-md md:text-body-lg text-tertiary max-w-xl">
+                  Certificates, Aadhaar/PAN updates, utility bill payments, high-speed printing, and insurance — all handled quickly, accurately, and reliably in Villivakkam.
+                </p>
+                
+                {/* CTA Pill Buttons Side by Side */}
+                <div className="flex flex-wrap items-center gap-3.5 w-full sm:w-auto">
+                  <a 
+                    className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-[0_4px_16px_rgba(245,166,35,0.3)] hover:shadow-[0_8px_24px_rgba(245,166,35,0.45)] hover:-translate-y-0.5 transition-all" 
+                    href={`tel:+91${business.phonePrimary}`}
+                  >
+                    <span className="material-symbols-outlined text-[20px]">call</span>
+                    <span>Call Now</span>
+                  </a>
+                  <a 
+                    className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-surface-container-lowest text-secondary font-label-md text-label-md font-bold shadow-sm hover:bg-secondary/10 transition-all" 
+                    href={whatsappUrl} 
+                    rel="noopener noreferrer" 
+                    target="_blank"
+                  >
+                    <span className="material-symbols-outlined text-[20px]">chat</span>
+                    <span>WhatsApp Us</span>
+                  </a>
+                </div>
+                
+                {/* Trust Strip */}
+                <div className="pt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-on-surface-variant font-label-sm text-label-sm">
+                  <div className="flex items-center gap-1.5 font-semibold text-secondary">
+                    <span className="material-symbols-outlined text-[18px]">verified</span>
+                    <span>Govt Authorized CSC</span>
+                  </div>
+                  <span className="text-tertiary-container">•</span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[18px] text-tertiary">schedule</span>
+                    <span>{business.hours.display}</span>
+                  </div>
+                  <span className="text-tertiary-container">•</span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[18px] text-primary">location_on</span>
+                    <span>{business.landmark}</span>
+                  </div>
+                </div>
+              </div>
               
-              <a 
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-support hover:bg-[#0e9b6a] text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all shadow-lg hover:shadow-[0_10px_25px_rgba(16,185,129,0.4)] hover:-translate-y-1"
-              >
-                <FaWhatsapp size={22} />
-                WhatsApp Us
-              </a>
+              {/* Hero Right Column (~55% SaaS-style Cluster) */}
+              <div className="lg:col-span-6 relative flex items-center justify-center min-h-[380px] sm:min-h-[440px]">
+                {/* Orbiting Decorative Rings (Subtle) */}
+                <div className="absolute w-[360px] h-[360px] rounded-full bg-surface-container/60 -z-10"></div>
+                <div className="absolute w-[460px] h-[460px] rounded-full bg-surface-container-high/30 -z-10"></div>
+                
+                {/* Central Card: Official Resident ID / E-Sevai Portal Graphic */}
+                <div className="w-full max-w-[340px] bg-surface-container-lowest rounded-2xl p-6 shadow-[0_16px_36px_-6px_rgba(20,27,36,0.12)] z-10">
+                  <div className="flex items-center justify-between pb-4">
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-lg bg-primary-fixed flex items-center justify-center">
+                        <span className="material-symbols-outlined text-primary text-[18px]">badge</span>
+                      </div>
+                      <div>
+                        <span className="block font-label-sm text-label-sm font-bold text-on-surface">E-GOVERNANCE PORTAL</span>
+                        <span className="block text-[10px] text-tertiary">CSC TN e-District Live Hub</span>
+                      </div>
+                    </div>
+                    <span className="px-2 py-0.5 rounded-md bg-secondary/10 text-secondary text-[11px] font-bold">VERIFIED</span>
+                  </div>
+                  
+                  {/* Sleek Card Mock Body */}
+                  <div className="bg-surface-container-low rounded-xl p-4 flex flex-col gap-3 my-2">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-lg bg-surface-variant flex items-center justify-center font-bold text-tertiary text-headline-sm">
+                        TN
+                      </div>
+                      <div className="flex flex-col gap-1 w-full">
+                        <div className="h-3 bg-surface-container-highest rounded-full w-4/5"></div>
+                        <div className="h-2.5 bg-surface-container-high rounded-full w-2/3"></div>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2 pt-2 text-[11px]">
+                      <div className="bg-surface-container-lowest p-2 rounded-lg">
+                        <span className="text-tertiary block font-mono">APP #</span>
+                        <span className="font-bold text-on-surface">TN-CSC-2025</span>
+                      </div>
+                      <div className="bg-surface-container-lowest p-2 rounded-lg">
+                        <span className="text-tertiary block font-mono">STATUS</span>
+                        <span className="font-bold text-secondary flex items-center gap-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span> Instant
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center justify-between text-[11px] text-tertiary pt-2">
+                    <span className="font-semibold text-on-surface-variant">Villivakkam Citizen Counter #01</span>
+                    <span className="font-mono text-primary font-bold">● FAST TRACK</span>
+                  </div>
+                </div>
+                
+                {/* Orbiting Floating Badges (5 total) */}
+                
+                {/* 1. WhatsApp Chat Bubble Badge (Top-Right) */}
+                <div className="absolute -top-3 right-4 sm:right-8 bg-surface-container-lowest rounded-2xl px-4 py-2.5 shadow-[0_8px_20px_rgba(0,109,65,0.12)] flex items-center gap-2.5 z-20">
+                  <div className="w-8 h-8 rounded-xl bg-secondary/15 flex items-center justify-center">
+                    <span className="material-symbols-outlined text-secondary text-[20px]">chat</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-label-sm text-label-sm font-bold text-on-surface">Instant WhatsApp Support</span>
+                    <span className="text-[11px] text-secondary font-medium">Send Documents Now</span>
+                  </div>
+                </div>
+                
+                {/* 2. Rupee / UPI Payment Badge (Bottom-Right) */}
+                <div className="absolute bottom-2 right-2 sm:right-6 bg-surface-container-lowest rounded-2xl px-4 py-2.5 shadow-[0_8px_20px_rgba(245,166,35,0.18)] flex items-center gap-2.5 z-20">
+                  <div className="w-8 h-8 rounded-xl bg-primary-container/20 flex items-center justify-center">
+                    <span className="material-symbols-outlined text-primary text-[20px]">currency_rupee</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-label-sm text-label-sm font-bold text-on-surface">Zero-Delay Payments</span>
+                    <span className="text-[11px] text-tertiary">EB, Taxes, UPI Accepted</span>
+                  </div>
+                </div>
+                
+                {/* 3. High-precision Laser Printer Badge (Top-Left) */}
+                <div className="absolute top-6 left-0 sm:left-4 bg-surface-container-lowest rounded-2xl px-3.5 py-2 shadow-[0_8px_20px_rgba(20,27,36,0.08)] flex items-center gap-2 z-20">
+                  <div className="w-8 h-8 rounded-xl bg-surface-container-high flex items-center justify-center">
+                    <span className="material-symbols-outlined text-primary text-[20px]">print</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-label-sm text-label-sm font-bold text-on-surface">Color & PVC Print</span>
+                    <span className="text-[11px] text-tertiary">300 DPI Thermal Quality</span>
+                  </div>
+                </div>
+                
+                {/* 4. Flight / Travel Ticket Booking Badge (Bottom-Left) */}
+                <div className="absolute -bottom-4 left-4 sm:left-10 bg-surface-container-lowest rounded-2xl px-3.5 py-2 shadow-[0_8px_20px_rgba(20,27,36,0.08)] flex items-center gap-2 z-20">
+                  <div className="w-8 h-8 rounded-xl bg-tertiary-fixed flex items-center justify-center">
+                    <span className="material-symbols-outlined text-on-tertiary-fixed text-[20px]">airplane_ticket</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-label-sm text-label-sm font-bold text-on-surface">IRCTC & Flights</span>
+                    <span className="text-[11px] text-tertiary">Confirmed PNR Booking</span>
+                  </div>
+                </div>
+                
+                {/* 5. Shield / Insurance Badge (Center-Right Floating) */}
+                <div className="hidden sm:flex absolute top-1/2 -right-4 -translate-y-1/2 bg-surface-container-lowest rounded-2xl px-3 py-2 shadow-[0_8px_20px_rgba(0,109,65,0.1)] items-center gap-2 z-20">
+                  <div className="w-8 h-8 rounded-xl bg-secondary-container/30 flex items-center justify-center">
+                    <span className="material-symbols-outlined text-secondary text-[20px]">verified_user</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-label-sm text-label-sm font-bold text-on-surface">Motor Insurance</span>
+                    <span className="text-[10px] text-secondary font-semibold">Instant Policy Print</span>
+                  </div>
+                </div>
+                
+              </div>
             </div>
-          </FadeIn>
-
-          {/* Trust Strip */}
-          <FadeIn delay={0.5}>
-            <div className="glass-card py-5 px-8 rounded-full inline-flex flex-wrap items-center justify-center gap-y-3 gap-x-8 text-sm font-semibold text-neutral-muted">
+            
+            {/* Micro-detail bottom strip inside Hero Card */}
+            <div className="mt-8 pt-6 flex items-center justify-between text-tertiary font-label-sm text-label-sm">
               <div className="flex items-center gap-2">
-                <div className="bg-green-100 p-1.5 rounded-full"><ShieldCheck size={16} className="text-green-600" /></div>
-                <span className="text-neutral-text">Govt Authorized</span>
+                <span className="w-2 h-2 rounded-full bg-primary-container"></span>
+                <span>Serving Villivakkam, Kolathur, Anna Nagar & Agaram</span>
               </div>
-              <div className="hidden sm:block w-1 h-1 bg-gray-300 rounded-full"></div>
-              <div className="flex items-center gap-2">
-                <div className="bg-blue-100 p-1.5 rounded-full"><Clock size={16} className="text-primary" /></div>
-                <span className="text-neutral-text">{business.hours.display}</span>
-              </div>
-              <div className="hidden sm:block w-1 h-1 bg-gray-300 rounded-full"></div>
-              <div className="flex items-center gap-2">
-                <div className="bg-accent/20 p-1.5 rounded-full"><MapPin size={16} className="text-accent-hover" /></div>
-                <span className="text-neutral-text">{business.landmark}</span>
+              <div className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-surface-container-highest"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-surface-container-highest"></span>
+                <span className="font-mono text-[11px] ml-1 text-on-surface-variant">CSC ID #63402</span>
               </div>
             </div>
-          </FadeIn>
-        </div>
+            
+          </div>
+        </section>
       </div>
-    </section>
+    </div>
   );
 }

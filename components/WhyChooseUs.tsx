@@ -1,68 +1,77 @@
 "use client";
 
-import { ShieldCheck, Clock, IndianRupee, Smile } from "lucide-react";
-import FadeIn from "./FadeIn";
-
-const reasons = [
-  {
-    icon: ShieldCheck,
-    title: "Govt-Authorized",
-    description: "Official CSC recognized by the Digital India initiative.",
-    color: "bg-green-100 text-green-600",
-  },
-  {
-    icon: Clock,
-    title: "Fast Turnaround",
-    description: "Get your certificates and documents processed quickly.",
-    color: "bg-blue-100 text-blue-600",
-  },
-  {
-    icon: IndianRupee,
-    title: "Transparent Pricing",
-    description: "No hidden charges. We follow standard government pricing.",
-    color: "bg-amber-100 text-amber-600",
-  },
-  {
-    icon: Smile,
-    title: "Friendly Staff",
-    description: "Our Villivakkam team guides you step-by-step in Tamil or English.",
-    color: "bg-purple-100 text-purple-600",
-  },
-];
-
 export default function WhyChooseUs() {
   return (
-    <section id="why-us" className="py-24 bg-neutral-bg relative overflow-hidden">
-      {/* Background blobs */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-      
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
-        <FadeIn>
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-neutral-text mb-6">Why Choose Us?</h2>
-            <p className="text-lg text-neutral-muted max-w-2xl mx-auto font-medium">
-              Experience hassle-free government services right in your neighborhood.
-            </p>
+    <section className="w-full bg-surface-container-low py-16" id="why-us">
+      <div className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
+        
+        <div className="flex flex-col items-center text-center gap-3 mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm uppercase font-bold tracking-wide">
+            Villivakkam&apos;s Most Trusted Counter
           </div>
-        </FadeIn>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {reasons.map((reason, index) => {
-            const Icon = reason.icon;
-            return (
-              <FadeIn key={index} delay={0.1 * index}>
-                <div className="text-center p-8 rounded-[32px] bg-white premium-shadow hover:-translate-y-2 transition-all duration-300 h-full">
-                  <div className={`w-20 h-20 mx-auto mb-8 rounded-[24px] flex items-center justify-center rotate-3 hover:rotate-0 transition-transform ${reason.color}`}>
-                    <Icon size={36} strokeWidth={2.5} />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-neutral-text">{reason.title}</h3>
-                  <p className="text-neutral-muted leading-relaxed font-medium">
-                    {reason.description}
-                  </p>
-                </div>
-              </FadeIn>
-            );
-          })}
+          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-surface tracking-tight">
+            Why Choose Harshith E Sevai?
+          </h2>
+          <p className="font-body-lg text-body-md md:text-body-lg text-tertiary max-w-xl">
+            We combine authenticated government agency with the welcoming speed of a neighborhood digital cafe.
+          </p>
+        </div>
+        
+        {/* 4 Clean Mini-Cards in a Horizontal Grid Row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          {/* 1. Govt-Authorized Center */}
+          <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col items-start gap-4">
+            <div className="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center">
+              <span className="material-symbols-outlined text-primary text-[26px]">verified_user</span>
+            </div>
+            <div>
+              <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Govt-Authorized Center</h3>
+              <p className="font-body-sm text-body-sm text-tertiary leading-relaxed">
+                Certified CSC operator with direct, authenticated portal credentials for Tamil Nadu and Central databases.
+              </p>
+            </div>
+          </div>
+          
+          {/* 2. Fast Turnaround */}
+          <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col items-start gap-4">
+            <div className="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center">
+              <span className="material-symbols-outlined text-secondary text-[26px]">speed</span>
+            </div>
+            <div>
+              <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Fast Turnaround</h3>
+              <p className="font-body-sm text-body-sm text-tertiary leading-relaxed">
+                Zero waiting on sluggish queues. Swift processing with several certificates and utility receipts delivered same-day.
+              </p>
+            </div>
+          </div>
+          
+          {/* 3. Transparent Pricing */}
+          <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col items-start gap-4">
+            <div className="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center">
+              <span className="material-symbols-outlined text-primary text-[26px]">price_check</span>
+            </div>
+            <div>
+              <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Transparent Pricing</h3>
+              <p className="font-body-sm text-body-sm text-tertiary leading-relaxed">
+                Strict adherence to standardized government departmental rates with clear breakdown and digital receipts.
+              </p>
+            </div>
+          </div>
+          
+          {/* 4. Friendly Local Staff */}
+          <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col items-start gap-4">
+            <div className="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center">
+              <span className="material-symbols-outlined text-secondary text-[26px]">support_agent</span>
+            </div>
+            <div>
+              <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Friendly Local Staff</h3>
+              <p className="font-body-sm text-body-sm text-tertiary leading-relaxed">
+                Warm, bilingual guidance in Tamil (தமிழ்) and English. End-to-end help with documentation from start to finish.
+              </p>
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>

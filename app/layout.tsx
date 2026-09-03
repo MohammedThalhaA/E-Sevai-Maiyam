@@ -4,7 +4,6 @@ import "./globals.css";
 import { business } from "../data/site-content";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import FloatingContactBar from "../components/FloatingContactBar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -67,8 +66,11 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${inter.variable} ${notoSansTamil.variable}`}>
+    <html lang="en" className={`${inter.variable} ${notoSansTamil.variable} scroll-smooth`}>
       <head>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=inter:wght@100..900&display=swap" rel="stylesheet"/>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -76,11 +78,10 @@ export default function RootLayout({
       </head>
       <body className="antialiased flex flex-col min-h-screen">
         <Header />
-        <main className="flex-grow">
+        <main className="flex-grow pt-20">
           {children}
         </main>
         <Footer />
-        <FloatingContactBar />
       </body>
     </html>
   );

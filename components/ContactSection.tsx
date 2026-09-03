@@ -1,138 +1,195 @@
 "use client";
 
-import { MapPin, Phone, Clock, Send } from "lucide-react";
 import { business } from "../data/site-content";
 import { useState } from "react";
-import FadeIn from "./FadeIn";
 
 export default function ContactSection() {
-  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success">("idle");
+  const [formStatus, setFormStatus] = useState<"idle" | "success">("idle");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setFormStatus("submitting");
-    setTimeout(() => setFormStatus("success"), 1000);
+    setFormStatus("success");
+    (e.target as HTMLFormElement).reset();
   };
 
   return (
-    <section id="contact" className="py-24 bg-neutral-bg relative overflow-hidden">
-      {/* Decorative background */}
-      <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-t from-primary/10 to-transparent z-0" />
-      
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
-        <FadeIn>
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-neutral-text mb-6">Get in Touch</h2>
-            <p className="text-lg text-neutral-muted max-w-2xl mx-auto font-medium">
-              Visit our center, call us, or send a message. We are here to help you.
-            </p>
-          </div>
-        </FadeIn>
-
-        <div className="flex flex-col lg:flex-row gap-12">
+    <>
+      <section className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-12 md:py-16" id="contact">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          <div className="w-full lg:w-1/2 flex flex-col gap-8">
-            <FadeIn delay={0.1}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                
-                <div className="bg-white p-8 rounded-[32px] premium-shadow hover:-translate-y-1 transition-transform h-full flex flex-col">
-                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-2xl flex items-center justify-center mb-6">
-                    <MapPin size={24} />
+          {/* Left Column: Center Details & Quick Inquiry Form */}
+          <div className="lg:col-span-7 flex flex-col gap-6">
+            
+            {/* Address & Timings Card */}
+            <div className="bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-sm">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-6 pb-6 border-b border-surface-container-high">
+                <div>
+                  <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider block">Walk-in Today</span>
+                  <h3 className="font-headline-md text-headline-md font-bold text-on-surface">{business.name}</h3>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold">
+                  <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+                  <span>{business.hours.display}</span>
+                </div>
+              </div>
+              
+              <div className="flex flex-col gap-4 text-on-surface">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-primary-fixed/50 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="material-symbols-outlined text-primary text-[22px]">location_on</span>
                   </div>
-                  <h4 className="text-xl font-bold text-neutral-text mb-3">Our Location</h4>
-                  <p className="text-neutral-muted mb-4 font-medium flex-grow">{business.address}</p>
-                  <a 
-                    href="https://maps.google.com/?q=Villivakkam+Bus+Terminus" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-block text-sm font-bold text-primary hover:text-primary-dark transition-colors"
-                  >
-                    Get Directions &rarr;
+                  <div className="flex flex-col">
+                    <span className="font-label-md text-label-md font-bold text-on-surface">Address & Landmark</span>
+                    <p className="font-body-sm text-body-sm text-tertiary">
+                      {business.address}
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Tap to Call Buttons & WhatsApp */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                  <a className="flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-surface-container-low text-on-surface hover:bg-primary-container font-label-md text-label-md font-bold transition-all shadow-sm" href={`tel:+91${business.phonePrimary}`}>
+                    <span className="material-symbols-outlined text-primary text-[20px]">call</span>
+                    <span>{business.phonePrimary}</span>
+                  </a>
+                  {business.phoneSecondary && (
+                    <a className="flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-surface-container-low text-on-surface hover:bg-primary-container font-label-md text-label-md font-bold transition-all shadow-sm" href={`tel:+91${business.phoneSecondary}`}>
+                      <span className="material-symbols-outlined text-primary text-[20px]">call</span>
+                      <span>{business.phoneSecondary}</span>
+                    </a>
+                  )}
+                </div>
+                
+                <div className="flex flex-wrap gap-3 pt-1">
+                  <a className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-secondary text-on-secondary font-label-md text-label-md font-bold shadow-sm hover:opacity-90 transition-all" href={`https://wa.me/${business.whatsapp}?text=Hi%20Harshith%20E%20Sevai,%20I%20have%20an%20inquiry.`} rel="noopener noreferrer" target="_blank">
+                    <span className="material-symbols-outlined text-[20px]">chat</span>
+                    <span>WhatsApp Us</span>
+                  </a>
+                  <a className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-bold hover:bg-surface-variant transition-all" href={`https://maps.google.com/?q=${encodeURIComponent(business.address)}`} rel="noopener noreferrer" target="_blank">
+                    <span className="material-symbols-outlined text-[20px]">directions</span>
+                    <span>Get Directions</span>
                   </a>
                 </div>
-
-                <div className="flex flex-col gap-6 h-full">
-                  <div className="bg-white p-8 rounded-[32px] premium-shadow hover:-translate-y-1 transition-transform flex-1">
-                    <div className="w-12 h-12 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-4">
-                      <Phone size={24} />
-                    </div>
-                    <h4 className="text-xl font-bold text-neutral-text mb-2">Call Us</h4>
-                    <a href={`tel:+91${business.phonePrimary}`} className="block text-lg font-bold text-neutral-muted hover:text-primary transition-colors">{business.phonePrimary}</a>
+              </div>
+            </div>
+            
+            {/* Quick Inquiry Form Card */}
+            <div className="bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-sm">
+              <div className="mb-5">
+                <h4 className="font-headline-sm text-headline-sm font-bold text-on-surface">Quick Online Inquiry</h4>
+                <p className="font-body-sm text-body-sm text-tertiary">Need documents urgently? Leave a note and we will reply within 10 minutes.</p>
+              </div>
+              
+              <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex flex-col gap-1.5">
+                    <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant" htmlFor="name">Your Full Name</label>
+                    <input className="h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="name" placeholder="e.g. S. Murugan" required type="text"/>
                   </div>
-
-                  <div className="bg-white p-8 rounded-[32px] premium-shadow hover:-translate-y-1 transition-transform flex-1">
-                    <div className="w-12 h-12 bg-support/10 text-support rounded-2xl flex items-center justify-center mb-4">
-                      <Clock size={24} />
-                    </div>
-                    <h4 className="text-xl font-bold text-neutral-text mb-2">Hours</h4>
-                    <p className="text-neutral-muted font-bold">{business.hours.display}</p>
+                  <div className="flex flex-col gap-1.5">
+                    <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant" htmlFor="phone">Mobile Number</label>
+                    <input className="h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="phone" placeholder="e.g. 98401 23456" required type="tel"/>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
-
-            {/* Quick Contact Form */}
-            <FadeIn delay={0.2}>
-              <div className="bg-white rounded-[32px] premium-shadow p-8 lg:p-10 border border-gray-50">
-                <h3 className="text-2xl font-bold mb-8 text-neutral-text">Send us a message</h3>
-                {formStatus === "success" ? (
-                  <div className="bg-green-50 text-green-700 p-8 rounded-[24px] border border-green-100 text-center font-bold text-lg">
-                    Thanks for reaching out! We will get back to you shortly.
+                
+                <div className="flex flex-col gap-1.5">
+                  <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant" htmlFor="serviceSelect">Service Needed</label>
+                  <select className="h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container" id="serviceSelect">
+                    <option value="certificates">TN Government Certificates (Caste/Income/Legal Heir)</option>
+                    <option value="aadhaar-pan">Aadhaar / PAN Card Services & PVC Print</option>
+                    <option value="voter-ration">Voter ID / Smart Ration Card Services</option>
+                    <option value="passport">Passport Seva Application & Slot</option>
+                    <option value="bills-tax">TNEB / Property Tax / Utility Bills</option>
+                    <option value="epfo-employment">PF Withdrawal (EPFO) / Employment Reg.</option>
+                    <option value="insurance-travel">Motor Insurance / Train & Flight Booking</option>
+                    <option value="xerox-prints">Bulk Xerox / Color Scanning / Lamination</option>
+                  </select>
+                </div>
+                
+                <div className="flex flex-col gap-1.5">
+                  <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant" htmlFor="msg">Your Requirement (Optional)</label>
+                  <textarea className="p-3.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="msg" placeholder="Tell us if you have soft copies ready or urgent deadlines..." rows={3}></textarea>
+                </div>
+                
+                <button className="w-full h-12 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-[0_4px_14px_rgba(245,166,35,0.3)] hover:shadow-[0_6px_20px_rgba(245,166,35,0.45)] transition-all" type="submit">
+                  Submit Inquiry
+                </button>
+                
+                {formStatus === "success" && (
+                  <div className="text-center p-3 bg-secondary-fixed/40 text-on-secondary-fixed-variant rounded-xl font-label-sm text-label-sm font-bold">
+                    ✓ Message Sent! We will contact you shortly on WhatsApp or phone call.
                   </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                    <input 
-                      type="text" 
-                      placeholder="Your Name" 
-                      required 
-                      className="w-full px-6 py-4 rounded-2xl bg-neutral-bg border border-transparent focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 outline-none transition-all text-neutral-text font-medium placeholder:text-gray-400"
-                    />
-                    <input 
-                      type="tel" 
-                      placeholder="Phone Number" 
-                      required 
-                      className="w-full px-6 py-4 rounded-2xl bg-neutral-bg border border-transparent focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 outline-none transition-all text-neutral-text font-medium placeholder:text-gray-400"
-                    />
-                    <input 
-                      type="text" 
-                      placeholder="Service Needed" 
-                      className="w-full px-6 py-4 rounded-2xl bg-neutral-bg border border-transparent focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary/10 outline-none transition-all text-neutral-text font-medium placeholder:text-gray-400"
-                    />
-                    <button 
-                      type="submit" 
-                      disabled={formStatus === "submitting"}
-                      className="w-full mt-2 bg-primary hover:bg-primary-dark text-white font-bold py-4 px-6 rounded-2xl transition-all shadow-lg hover:shadow-[0_10px_25px_rgba(37,99,235,0.4)] hover:-translate-y-1 flex items-center justify-center gap-2 disabled:opacity-70 disabled:hover:translate-y-0"
-                    >
-                      {formStatus === "submitting" ? "Sending..." : (
-                        <>
-                          <Send size={18} />
-                          Send Message
-                        </>
-                      )}
-                    </button>
-                  </form>
                 )}
-              </div>
-            </FadeIn>
-          </div>
-
-          {/* Map Embed */}
-          <FadeIn delay={0.3} className="w-full lg:w-1/2 h-full min-h-[500px]">
-            <div className="w-full h-full min-h-[500px] rounded-[40px] overflow-hidden premium-shadow bg-neutral-bg relative border border-white/50">
-              <iframe
-                src={business.googleMapsEmbedUrl}
-                width="100%"
-                height="100%"
-                style={{ border: 0, position: 'absolute', inset: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Harshith E Sevai Maiyam Location"
-              ></iframe>
+              </form>
             </div>
-          </FadeIn>
+          </div>
+          
+          {/* Right Column: Stylized Interactive Map Card */}
+          <div className="lg:col-span-5 flex flex-col gap-4 sticky top-28">
+            <div className="bg-surface-container-lowest rounded-3xl p-5 shadow-sm">
+              <div className="flex items-center justify-between mb-3 px-1">
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-primary text-[20px]">explore</span>
+                  <span className="font-headline-sm text-[16px] font-bold text-on-surface">Neighborhood Landmark Map</span>
+                </div>
+                <a className="px-3 py-1 rounded-full bg-primary-fixed/60 text-on-primary-fixed text-label-sm font-label-sm font-bold hover:bg-primary-container transition-colors" href={`https://maps.google.com/?q=${encodeURIComponent(business.address)}`} rel="noopener noreferrer" target="_blank">
+                  Open in Google Maps
+                </a>
+              </div>
+              
+              {/* Stylized Google Map Embed */}
+              <div className="w-full h-72 sm:h-96 rounded-2xl relative overflow-hidden bg-cover bg-center shadow-inner flex flex-col justify-end p-0">
+                <iframe
+                  src={business.googleMapsEmbedUrl}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Map Location"
+                  className="w-full h-full object-cover"
+                ></iframe>
+              </div>
+              
+              {/* Quick Directions Footer Note */}
+              <div className="mt-4 p-3.5 rounded-2xl bg-surface-container-low flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+                <span className="flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-[18px] text-secondary">local_parking</span>
+                  Two-wheeler parking available in front
+                </span>
+                <span className="font-bold text-primary">Pin: 600049</span>
+              </div>
+            </div>
+            
+            {/* Live Status Counter Widget */}
+            <div className="bg-gradient-to-r from-primary-fixed/40 to-surface-container-low rounded-3xl p-6 shadow-sm flex items-center justify-between">
+              <div className="flex flex-col">
+                <span className="font-label-sm text-label-sm text-on-surface-variant font-semibold">Today&apos;s Token Traffic</span>
+                <span className="font-headline-sm text-headline-sm font-bold text-on-surface">Tokens Serving Fast</span>
+                <span className="font-body-sm text-body-sm text-tertiary">Average wait time: ~6 mins</span>
+              </div>
+              <div className="w-14 h-14 rounded-2xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-sm">
+                <span className="font-display-hero text-[20px] font-bold text-secondary">06</span>
+                <span className="text-[10px] text-tertiary uppercase font-bold">Mins</span>
+              </div>
+            </div>
+          </div>
+          
         </div>
+      </section>
+
+      {/* Mobile Sticky Bottom Bar for instant interaction */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 p-3 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.08)] flex items-center gap-2.5">
+        <a className="flex-1 flex items-center justify-center gap-2 h-12 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-md" href={`tel:+91${business.phonePrimary}`}>
+          <span className="material-symbols-outlined text-[20px]">call</span>
+          <span>Call Desk</span>
+        </a>
+        <a className="flex-1 flex items-center justify-center gap-2 h-12 rounded-full bg-secondary text-on-secondary font-label-md text-label-md font-bold shadow-md" href={`https://wa.me/${business.whatsapp}?text=Vanakkam%20Harshith%20E%20Sevai,%20I%20need%20assistance.`} rel="noopener noreferrer" target="_blank">
+          <span className="material-symbols-outlined text-[20px]">chat</span>
+          <span>WhatsApp</span>
+        </a>
       </div>
-    </section>
+    </>
   );
 }
