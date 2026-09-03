@@ -44,17 +44,17 @@ export default function Header() {
       <div className="h-20 max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-4">
         
         {/* Logo Section */}
-        <div className="flex items-center gap-3 shrink-0">
-          <div className="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center">
+        <div className="flex items-center gap-3 shrink-0 min-w-0">
+          <div className="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
             <span className="material-symbols-outlined text-primary text-[24px]">account_balance</span>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col min-w-0">
             <div className="flex items-center gap-2">
-              <span className="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">{business.name}</span>
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wide uppercase bg-primary-container/20 text-primary">CSC</span>
+              <span className="font-headline-sm text-[16px] sm:text-[20px] text-on-surface tracking-tight font-bold truncate">{business.name}</span>
+              <span className="inline-flex shrink-0 items-center px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wide uppercase bg-primary-container/20 text-primary">CSC</span>
             </div>
-            <span className="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+            <span className="font-label-sm text-[10px] sm:text-[12px] text-secondary font-semibold flex items-center gap-1.5 truncate">
+              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse shrink-0"></span>
               Villivakkam • Open Now
             </span>
           </div>
