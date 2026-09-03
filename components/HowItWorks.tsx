@@ -1,17 +1,21 @@
 "use client";
 
+import { useLanguage } from "../context/LanguageContext";
+
 export default function HowItWorks() {
+  const { t } = useLanguage();
+
   return (
     <section className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-16 md:py-20" id="how-it-works">
       <div className="flex flex-col items-center text-center gap-3 mb-14">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-container/20 text-primary font-label-sm text-[10px] sm:text-label-sm uppercase font-bold tracking-wider">
-          Effortless 3-Step Flow
+          {t.how.tagline}
         </div>
         <h2 className="font-headline-lg text-[26px] sm:text-[32px] md:text-headline-lg font-bold text-on-surface tracking-tight">
-          How It Works
+          {t.how.title}
         </h2>
         <p className="font-body-lg text-[14px] sm:text-body-md md:text-body-lg text-tertiary max-w-xl">
-          Skip the government office queues in 3 easy steps.
+          {t.how.subtitle}
         </p>
       </div>
       
@@ -26,12 +30,12 @@ export default function HowItWorks() {
             1
           </div>
           <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm w-full flex flex-col items-center gap-2">
-            <span className="font-headline-sm text-[18px] font-bold text-on-surface">Visit or Call/WhatsApp</span>
+            <span className="font-headline-sm text-[18px] font-bold text-on-surface">{t.how.step1Title}</span>
             <p className="font-body-sm text-body-sm text-tertiary">
-              Tell us what document or service you need. We verify eligibility and list required proof immediately.
+              {t.how.step1Sub}
             </p>
             <span className="inline-flex items-center gap-1 text-[12px] font-semibold text-primary pt-2">
-              <span className="material-symbols-outlined text-[16px]">touch_app</span> Walk-in or Chat
+              <span className="material-symbols-outlined text-[16px]">touch_app</span> {t.how.step1Pill}
             </span>
           </div>
         </div>
@@ -42,12 +46,12 @@ export default function HowItWorks() {
             2
           </div>
           <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm w-full flex flex-col items-center gap-2">
-            <span className="font-headline-sm text-[18px] font-bold text-on-surface">Submit Documents</span>
+            <span className="font-headline-sm text-[18px] font-bold text-on-surface">{t.how.step2Title}</span>
             <p className="font-body-sm text-body-sm text-tertiary">
-              Bring physical documents to our Villivakkam desk or simply share photos via WhatsApp securely.
+              {t.how.step2Sub}
             </p>
             <span className="inline-flex items-center gap-1 text-[12px] font-semibold text-secondary pt-2">
-              <span className="material-symbols-outlined text-[16px]">lock</span> 100% Data Confidentiality
+              <span className="material-symbols-outlined text-[16px]">lock</span> {t.how.step2Pill}
             </span>
           </div>
         </div>
@@ -58,12 +62,12 @@ export default function HowItWorks() {
             3
           </div>
           <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm w-full flex flex-col items-center gap-2">
-            <span className="font-headline-sm text-[18px] font-bold text-on-surface">Get It Done — Fast</span>
+            <span className="font-headline-sm text-[18px] font-bold text-on-surface">{t.how.step3Title}</span>
             <p className="font-body-sm text-body-sm text-tertiary">
-              We file in the portal, track status, and hand over your authentic certificate, acknowledgement, or PVC card.
+              {t.how.step3Sub}
             </p>
             <span className="inline-flex items-center gap-1 text-[12px] font-semibold text-primary pt-2">
-              <span className="material-symbols-outlined text-[16px]">done_all</span> Often Same-Day
+              <span className="material-symbols-outlined text-[16px]">done_all</span> {t.how.step3Pill}
             </span>
           </div>
         </div>

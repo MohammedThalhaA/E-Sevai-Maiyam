@@ -1,9 +1,13 @@
 "use client";
 
 import { business } from "../data/site-content";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Hero() {
-  const whatsappMsg = "Vanakkam Harshith E Sevai, I need help with government services.";
+  const { t, language } = useLanguage();
+  const whatsappMsg = language === "ta" 
+    ? "வணக்கம் ஹர்ஷித் இ-சேவை, எனக்கு ஒரு உதவி தேவை." 
+    : "Vanakkam Harshith E Sevai, I need help with government services.";
   const whatsappUrl = `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(whatsappMsg)}`;
 
   return (
@@ -24,18 +28,18 @@ export default function Hero() {
                 {/* Eyebrow Pill Tag */}
                 <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed font-label-sm sm:font-label-md text-[10px] sm:text-label-md font-bold tracking-wide">
                   <span className="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
-                  <span>● {business.tagline.toUpperCase()}</span>
+                  <span>● {t.hero.tagline}</span>
                 </div>
                 
                 {/* Massive Bold Headline */}
                 <h1 className="font-display-hero text-[38px] sm:text-[48px] md:text-display-hero font-extrabold text-on-surface tracking-tight leading-[1.08]">
-                  Your Services. <br/>
-                  <span className="text-primary-container drop-shadow-sm">Handled Fast.</span>
+                  {t.hero.title1} <br/>
+                  <span className="text-primary-container drop-shadow-sm">{t.hero.title2}</span>
                 </h1>
                 
                 {/* Slate Gray Subtext */}
                 <p className="font-body-lg text-[15px] sm:text-body-md md:text-body-lg text-tertiary max-w-xl">
-                  Certificates, Aadhaar/PAN updates, utility bill payments, high-speed printing, and insurance — all handled quickly, accurately, and reliably in Villivakkam.
+                  {t.hero.subtitle}
                 </p>
                 
                 {/* CTA Pill Buttons Side by Side */}
@@ -45,7 +49,7 @@ export default function Hero() {
                     href={`tel:+91${business.phonePrimary}`}
                   >
                     <span className="material-symbols-outlined text-[16px] sm:text-[20px]">call</span>
-                    <span>Call Now</span>
+                    <span>{t.nav.callNow}</span>
                   </a>
                   <a 
                     className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-full bg-surface-container-lowest text-secondary font-label-sm sm:font-label-md text-[13px] sm:text-[14px] font-bold shadow-sm hover:bg-secondary/10 transition-all" 
@@ -54,7 +58,7 @@ export default function Hero() {
                     target="_blank"
                   >
                     <span className="material-symbols-outlined text-[16px] sm:text-[20px]">chat</span>
-                    <span>WhatsApp Us</span>
+                    <span>{t.nav.whatsappUs}</span>
                   </a>
                 </div>
                 
@@ -62,7 +66,7 @@ export default function Hero() {
                 <div className="pt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-on-surface-variant font-label-sm text-label-sm">
                   <div className="flex items-center gap-1.5 font-semibold text-secondary">
                     <span className="material-symbols-outlined text-[18px]">verified</span>
-                    <span>Govt Authorized CSC</span>
+                    <span>{t.hero.authCsc}</span>
                   </div>
                   <span className="hidden sm:inline text-tertiary-container">•</span>
                   <div className="flex items-center gap-1.5">
@@ -137,8 +141,8 @@ export default function Hero() {
                     <span className="material-symbols-outlined text-secondary text-[20px]">chat</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-label-sm text-label-sm font-bold text-on-surface">Instant WhatsApp Support</span>
-                    <span className="text-[11px] text-secondary font-medium">Send Documents Now</span>
+                    <span className="font-label-sm text-label-sm font-bold text-on-surface">{t.hero.instantSupport}</span>
+                    <span className="text-[11px] text-secondary font-medium">{t.hero.sendDocs}</span>
                   </div>
                 </div>
                 
@@ -148,8 +152,8 @@ export default function Hero() {
                     <span className="material-symbols-outlined text-primary text-[20px]">currency_rupee</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-label-sm text-label-sm font-bold text-on-surface">Zero-Delay Payments</span>
-                    <span className="text-[11px] text-tertiary">EB, Taxes, UPI Accepted</span>
+                    <span className="font-label-sm text-label-sm font-bold text-on-surface">{t.hero.zeroDelay}</span>
+                    <span className="text-[11px] text-tertiary">{t.hero.upiAccepted}</span>
                   </div>
                 </div>
                 
@@ -159,8 +163,8 @@ export default function Hero() {
                     <span className="material-symbols-outlined text-primary text-[20px]">print</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-label-sm text-label-sm font-bold text-on-surface">Color & PVC Print</span>
-                    <span className="text-[11px] text-tertiary">300 DPI Thermal Quality</span>
+                    <span className="font-label-sm text-label-sm font-bold text-on-surface">{t.hero.colorPrint}</span>
+                    <span className="text-[11px] text-tertiary">{t.hero.thermalQual}</span>
                   </div>
                 </div>
                 
@@ -170,8 +174,8 @@ export default function Hero() {
                     <span className="material-symbols-outlined text-on-tertiary-fixed text-[20px]">airplane_ticket</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-label-sm text-label-sm font-bold text-on-surface">IRCTC & Flights</span>
-                    <span className="text-[11px] text-tertiary">Confirmed PNR Booking</span>
+                    <span className="font-label-sm text-label-sm font-bold text-on-surface">{t.hero.irctc}</span>
+                    <span className="text-[11px] text-tertiary">{t.hero.pnrBook}</span>
                   </div>
                 </div>
                 
@@ -181,8 +185,8 @@ export default function Hero() {
                     <span className="material-symbols-outlined text-secondary text-[20px]">verified_user</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-label-sm text-label-sm font-bold text-on-surface">Motor Insurance</span>
-                    <span className="text-[10px] text-secondary font-semibold">Instant Policy Print</span>
+                    <span className="font-label-sm text-label-sm font-bold text-on-surface">{t.hero.motorIns}</span>
+                    <span className="text-[10px] text-secondary font-semibold">{t.hero.instantPolicy}</span>
                   </div>
                 </div>
                 
@@ -193,7 +197,7 @@ export default function Hero() {
             <div className="mt-8 pt-6 flex items-center justify-between text-tertiary font-label-sm text-label-sm">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-primary-container"></span>
-                <span>Serving Villivakkam, Kolathur, Anna Nagar & Agaram</span>
+                <span>{t.contact.serving}</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary-container"></span>

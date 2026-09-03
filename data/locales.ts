@@ -90,6 +90,13 @@ export const locales = {
       whatsapp: "WhatsApp",
       openMap: "Open in Google Maps",
       serving: "Serving Villivakkam, Kolathur, Anna Nagar & Agaram"
+    },
+    footer: {
+      desc: "Authorized Common Service Center (CSC) offering swift, frictionless Tamil Nadu e-Governance and Central citizen services right here in Villivakkam.",
+      authPill: "Central Govt Authorized CSC • Digital India",
+      servicesTitle: "Citizen Services",
+      timingsTitle: "Center Timings",
+      addressTitle: "Center Address"
     }
   },
   ta: {
@@ -183,6 +190,13 @@ export const locales = {
       whatsapp: "வாட்ஸ்அப்",
       openMap: "கூகுள் மேப்பில் திறக்க",
       serving: "வில்லிவாக்கம், கொளத்தூர், அண்ணா நகர் & அகரம் ஆகிய பகுதிகளில் சேவை செய்கிறோம்"
+    },
+    footer: {
+      desc: "வில்லிவாக்கத்தின் சிறந்த அரசு இ-சேவை மையம் (CSC). அனைத்து விதமான சான்றிதழ்கள் மற்றும் டிஜிட்டல் சேவைகளை மிக விரைவாக வழங்குகிறோம்.",
+      authPill: "அரசு அங்கீகரிக்கப்பட்ட CSC மையம் • டிஜிட்டல் இந்தியா",
+      servicesTitle: "முக்கிய சேவைகள்",
+      timingsTitle: "மைய நேரம்",
+      addressTitle: "மைய முகவரி"
     }
   }
 };

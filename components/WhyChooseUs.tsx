@@ -1,19 +1,23 @@
 "use client";
 
+import { useLanguage } from "../context/LanguageContext";
+
 export default function WhyChooseUs() {
+  const { t } = useLanguage();
+
   return (
     <section className="w-full bg-surface-container-low py-16" id="why-us">
       <div className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop">
         
         <div className="flex flex-col items-center text-center gap-3 mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/15 text-secondary font-label-sm text-[10px] sm:text-label-sm uppercase font-bold tracking-wide">
-            Villivakkam&apos;s Most Trusted Counter
+            {t.whyUs.tagline}
           </div>
           <h2 className="font-headline-lg text-[26px] sm:text-[32px] md:text-headline-lg font-bold text-on-surface tracking-tight">
-            Why Choose Harshith E Sevai?
+            {t.whyUs.title}
           </h2>
           <p className="font-body-lg text-[14px] sm:text-body-md md:text-body-lg text-tertiary max-w-xl">
-            We combine authenticated government agency with the welcoming speed of a neighborhood digital cafe.
+            {t.whyUs.subtitle}
           </p>
         </div>
         
@@ -26,9 +30,9 @@ export default function WhyChooseUs() {
               <span className="material-symbols-outlined text-on-surface text-[26px]">verified_user</span>
             </div>
             <div>
-              <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Govt-Authorized Center</h3>
+              <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">{t.whyUs.authTitle}</h3>
               <p className="font-body-sm text-body-sm text-tertiary leading-relaxed">
-                Certified CSC operator with direct, authenticated portal credentials for Tamil Nadu and Central databases.
+                {t.whyUs.authSub}
               </p>
             </div>
           </div>
@@ -39,9 +43,9 @@ export default function WhyChooseUs() {
               <span className="material-symbols-outlined text-on-surface text-[26px]">speed</span>
             </div>
             <div>
-              <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Fast Turnaround</h3>
+              <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">{t.whyUs.fastTitle}</h3>
               <p className="font-body-sm text-body-sm text-tertiary leading-relaxed">
-                Zero waiting on sluggish queues. Swift processing with several certificates and utility receipts delivered same-day.
+                {t.whyUs.fastSub}
               </p>
             </div>
           </div>
@@ -52,9 +56,9 @@ export default function WhyChooseUs() {
               <span className="material-symbols-outlined text-on-surface text-[26px]">price_check</span>
             </div>
             <div>
-              <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Transparent Pricing</h3>
+              <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">{t.whyUs.priceTitle}</h3>
               <p className="font-body-sm text-body-sm text-tertiary leading-relaxed">
-                Strict adherence to standardized government departmental rates with clear breakdown and digital receipts.
+                {t.whyUs.priceSub}
               </p>
             </div>
           </div>
@@ -65,9 +69,9 @@ export default function WhyChooseUs() {
               <span className="material-symbols-outlined text-on-surface text-[26px]">support_agent</span>
             </div>
             <div>
-              <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">Friendly Local Staff</h3>
+              <h3 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">{t.whyUs.staffTitle}</h3>
               <p className="font-body-sm text-body-sm text-tertiary leading-relaxed">
-                Warm, bilingual guidance in Tamil (தமிழ்) and English. End-to-end help with documentation from start to finish.
+                {t.whyUs.staffSub}
               </p>
             </div>
           </div>

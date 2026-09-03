@@ -2,10 +2,12 @@
 
 import { business } from "../data/site-content";
 import { useState, useEffect } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState("services");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t, language, toggleLanguage } = useLanguage();
 
   // Scroll spy to highlight the active section dynamically
   useEffect(() => {
@@ -34,10 +36,10 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { id: "services", label: "Services" },
-    { id: "why-us", label: "Why Us" },
-    { id: "how-it-works", label: "How It Works" },
-    { id: "contact", label: "Contact" },
+    { id: "services", label: t.nav.services },
+    { id: "why-us", label: t.nav.whyUs },
+    { id: "how-it-works", label: t.nav.howItWorks },
+    { id: "contact", label: t.nav.contact },
   ];
 
   return (
@@ -56,7 +58,7 @@ export default function Header() {
             </div>
             <span className="font-label-sm text-[10px] sm:text-[12px] text-secondary font-semibold flex items-center gap-1.5 truncate">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse shrink-0"></span>
-              Villivakkam • Open Now
+              {t.hero.openNow}
             </span>
           </div>
         </div>
@@ -81,12 +83,19 @@ export default function Header() {
 
         {/* Action Buttons */}
         <div className="flex items-center gap-3">
+          <button
+            onClick={toggleLanguage}
+            className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full border border-surface-container-high bg-surface text-on-surface font-label-md text-label-md font-bold shadow-sm hover:bg-surface-container-low transition-colors"
+          >
+            {language === "en" ? "தமிழ்" : "English"}
+          </button>
+          
           <a 
             className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-[0_4px_12px_rgba(34,197,94,0.25)] hover:shadow-[0_6px_18px_rgba(34,197,94,0.4)] transition-all transform hover:-translate-y-0.5 active:translate-y-0" 
             href={`tel:+91${business.phonePrimary}`}
           >
             <span className="material-symbols-outlined text-[18px]">call</span>
-            <span>{business.phonePrimary}</span>
+            <span>{t.nav.callNow}</span>
           </a>
           
           <button 
@@ -125,8 +134,15 @@ export default function Header() {
             href={`tel:+91${business.phonePrimary}`}
           >
             <span className="material-symbols-outlined text-[18px]">call</span>
-            <span>Call Now</span>
+            <span>{t.nav.callNow}</span>
           </a>
+          
+          <button
+            onClick={toggleLanguage}
+            className="mt-2 flex items-center justify-center w-full px-5 py-3 rounded-xl border border-surface-container-high bg-surface text-on-surface font-label-md font-bold shadow-sm hover:bg-surface-container-low transition-colors"
+          >
+            {language === "en" ? "தமிழ்" : "English"}
+          </button>
         </div>
       )}
     </header>

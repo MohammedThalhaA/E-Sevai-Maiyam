@@ -2,9 +2,11 @@
 
 import { business } from "../data/site-content";
 import { useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function ContactSection() {
   const [formStatus, setFormStatus] = useState<"idle" | "success">("idle");
+  const { t } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,7 +26,7 @@ export default function ContactSection() {
             <div className="bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-sm">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-6 pb-6 border-b border-surface-container-high">
                 <div>
-                  <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider block">Walk-in Today</span>
+                  <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider block">{t.contact.walkIn}</span>
                   <h3 className="font-headline-md text-headline-md font-bold text-on-surface">{business.name}</h3>
                 </div>
                 <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold">
@@ -39,7 +41,7 @@ export default function ContactSection() {
                     <span className="material-symbols-outlined text-primary text-[22px]">location_on</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-label-md text-label-md font-bold text-on-surface">Address & Landmark</span>
+                    <span className="font-label-md text-label-md font-bold text-on-surface">{t.contact.addressLabel}</span>
                     <p className="font-body-sm text-body-sm text-tertiary">
                       {business.address}
                     </p>
@@ -63,11 +65,11 @@ export default function ContactSection() {
                 <div className="flex flex-wrap gap-3 pt-1">
                   <a className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-secondary text-on-secondary font-label-md text-label-md font-bold shadow-sm hover:opacity-90 transition-all" href={`https://wa.me/${business.whatsapp}?text=Hi%20Harshith%20E%20Sevai,%20I%20have%20an%20inquiry.`} rel="noopener noreferrer" target="_blank">
                     <span className="material-symbols-outlined text-[20px]">chat</span>
-                    <span>WhatsApp Us</span>
+                    <span>{t.contact.whatsapp}</span>
                   </a>
                   <a className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-bold hover:bg-surface-variant transition-all" href={`https://maps.google.com/?q=${encodeURIComponent(business.address)}`} rel="noopener noreferrer" target="_blank">
                     <span className="material-symbols-outlined text-[20px]">directions</span>
-                    <span>Get Directions</span>
+                    <span>{t.contact.getDirections}</span>
                   </a>
                 </div>
               </div>
@@ -76,24 +78,24 @@ export default function ContactSection() {
             {/* Quick Inquiry Form Card */}
             <div className="bg-surface-container-lowest rounded-3xl p-6 sm:p-8 shadow-sm">
               <div className="mb-5">
-                <h4 className="font-headline-sm text-headline-sm font-bold text-on-surface">Quick Online Inquiry</h4>
-                <p className="font-body-sm text-body-sm text-tertiary">Need documents urgently? Leave a note and we will reply within 10 minutes.</p>
+                <h4 className="font-headline-sm text-headline-sm font-bold text-on-surface">{t.contact.title}</h4>
+                <p className="font-body-sm text-body-sm text-tertiary">{t.contact.subtitle}</p>
               </div>
               
               <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
-                    <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant" htmlFor="name">Your Full Name</label>
-                    <input className="h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="name" placeholder="Your Full Name" required type="text"/>
+                    <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant" htmlFor="name">{t.contact.nameLabel}</label>
+                    <input className="h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="name" placeholder={t.contact.nameLabel} required type="text"/>
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant" htmlFor="phone">Mobile Number</label>
-                    <input className="h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="phone" placeholder="Mobile Number" required type="tel"/>
+                    <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant" htmlFor="phone">{t.contact.phoneLabel}</label>
+                    <input className="h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="phone" placeholder={t.contact.phoneLabel} required type="tel"/>
                   </div>
                 </div>
                 
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant" htmlFor="serviceSelect">Service Needed</label>
+                  <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant" htmlFor="serviceSelect">{t.contact.serviceLabel}</label>
                   <select className="h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container" id="serviceSelect">
                     <option value="certificates">TN Government Certificates (Caste/Income/Legal Heir)</option>
                     <option value="aadhaar-pan">Aadhaar / PAN Card Services & PVC Print</option>
@@ -107,17 +109,17 @@ export default function ContactSection() {
                 </div>
                 
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant" htmlFor="msg">Your Requirement (Optional)</label>
-                  <textarea className="p-3.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="msg" placeholder="Tell us if you have soft copies ready or urgent deadlines..." rows={3}></textarea>
+                  <label className="font-label-sm text-label-sm font-semibold text-on-surface-variant" htmlFor="msg">{t.contact.msgLabel}</label>
+                  <textarea className="p-3.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-tertiary-container focus:outline-none focus:ring-2 focus:ring-primary-container" id="msg" placeholder={t.contact.msgPlaceholder} rows={3}></textarea>
                 </div>
                 
                 <button className="w-full h-12 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-[0_4px_14px_rgba(34,197,94,0.3)] hover:shadow-[0_6px_20px_rgba(34,197,94,0.45)] transition-all" type="submit">
-                  Submit Inquiry
+                  {t.contact.submitBtn}
                 </button>
                 
                 {formStatus === "success" && (
                   <div className="text-center p-3 bg-secondary-fixed/40 text-on-secondary-fixed-variant rounded-xl font-label-sm text-label-sm font-bold">
-                    ✓ Message Sent! We will contact you shortly on WhatsApp or phone call.
+                    {t.contact.successMsg}
                   </div>
                 )}
               </form>
@@ -130,10 +132,10 @@ export default function ContactSection() {
               <div className="flex items-center justify-between mb-3 px-1">
                 <div className="flex items-center gap-2">
                   <span className="material-symbols-outlined text-primary text-[20px]">explore</span>
-                  <span className="font-headline-sm text-[16px] font-bold text-on-surface">Neighborhood Landmark Map</span>
+                  <span className="font-headline-sm text-[16px] font-bold text-on-surface">{t.contact.mapTitle}</span>
                 </div>
                 <a className="px-3 py-1 rounded-full bg-primary-fixed/60 text-on-primary-fixed text-label-sm font-label-sm font-bold hover:bg-primary-container transition-colors" href={`https://maps.google.com/?q=${encodeURIComponent(business.address)}`} rel="noopener noreferrer" target="_blank">
-                  Open in Google Maps
+                  {t.contact.openMap}
                 </a>
               </div>
               
@@ -156,7 +158,7 @@ export default function ContactSection() {
               <div className="mt-4 p-3.5 rounded-2xl bg-surface-container-low flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
                 <span className="flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-[18px] text-secondary">local_parking</span>
-                  Two-wheeler parking available in front
+                  {t.contact.parkingInfo}
                 </span>
                 <span className="font-bold text-primary">Pin: 600049</span>
               </div>
@@ -172,11 +174,11 @@ export default function ContactSection() {
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 p-3 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.08)] flex items-center gap-2.5">
         <a className="flex-1 flex items-center justify-center gap-2 h-12 rounded-full bg-primary-container text-on-surface font-label-md text-label-md font-bold shadow-md" href={`tel:+91${business.phonePrimary}`}>
           <span className="material-symbols-outlined text-[20px]">call</span>
-          <span>Call Desk</span>
+          <span>{t.contact.callDesk}</span>
         </a>
         <a className="flex-1 flex items-center justify-center gap-2 h-12 rounded-full bg-secondary text-on-secondary font-label-md text-label-md font-bold shadow-md" href={`https://wa.me/${business.whatsapp}?text=Vanakkam%20Harshith%20E%20Sevai,%20I%20need%20assistance.`} rel="noopener noreferrer" target="_blank">
           <span className="material-symbols-outlined text-[20px]">chat</span>
-          <span>WhatsApp</span>
+          <span>{t.contact.whatsapp}</span>
         </a>
       </div>
     </>

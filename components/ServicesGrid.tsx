@@ -1,6 +1,7 @@
 "use client";
 
 import { services, business } from "../data/site-content";
+import { useLanguage } from "../context/LanguageContext";
 
 const categoryMeta = {
   certificates: {
@@ -68,10 +69,13 @@ const categoryMeta = {
 type CategoryProps = {
   items: Array<{ id: string; name: string; nameTa: string; desc?: string }>;
   metaKey: keyof typeof categoryMeta;
+  title: string;
+  subtitle: string;
 };
 
-function CategorySection({ items, metaKey }: CategoryProps) {
+function CategorySection({ items, metaKey, title, subtitle }: CategoryProps) {
   const meta = categoryMeta[metaKey];
+  const { language } = useLanguage();
 
   return (
     <div className="mb-14 scroll-mt-24" id={`cat-${metaKey}`}>
@@ -80,8 +84,8 @@ function CategorySection({ items, metaKey }: CategoryProps) {
           <span className={`material-symbols-outlined ${meta.iconColor} text-[22px]`}>{meta.icon}</span>
         </div>
         <div>
-          <h3 className="font-headline-sm text-[18px] sm:text-headline-sm font-bold text-on-surface">{meta.title}</h3>
-          <p className="font-body-sm text-body-sm text-tertiary">{meta.subtitle}</p>
+          <h3 className="font-headline-sm text-[18px] sm:text-headline-sm font-bold text-on-surface">{title}</h3>
+          <p className="font-body-sm text-body-sm text-tertiary">{subtitle}</p>
         </div>
       </div>
       
@@ -98,8 +102,8 @@ function CategorySection({ items, metaKey }: CategoryProps) {
                 <div className={`w-11 h-11 rounded-xl ${meta.cardIconBg} flex items-center justify-center mb-4`}>
                   <span className={`material-symbols-outlined ${iconColorClass} text-[24px]`}>{cardIcon}</span>
                 </div>
-                <h4 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">{service.name}</h4>
-                <p className="font-body-sm text-body-sm text-tertiary">{service.nameTa}</p>
+                <h4 className="font-headline-sm text-[18px] font-bold text-on-surface mb-2">{language === "ta" ? service.nameTa : service.name}</h4>
+                <p className="font-body-sm text-body-sm text-tertiary">{language === "ta" ? service.name : service.nameTa}</p>
               </div>
               <a 
                 className="pt-4 font-label-md text-label-md font-bold text-primary flex items-center gap-1 hover:gap-2 transition-all" 
@@ -118,37 +122,39 @@ function CategorySection({ items, metaKey }: CategoryProps) {
 }
 
 export default function ServicesGrid() {
+  const { t } = useLanguage();
+
   return (
     <section className="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin-desktop py-12 md:py-16" id="services">
       {/* Section Header */}
       <div className="flex flex-col items-center text-center gap-3 mb-12">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-container/20 text-primary font-label-sm text-[10px] sm:text-label-sm uppercase font-bold tracking-wider">
-          Central & Tamil Nadu Citizen Desk
+          {t.services.tagline}
         </div>
         <h2 className="font-headline-lg text-[26px] sm:text-[32px] md:text-headline-lg font-bold text-on-surface tracking-tight">
-          What We Offer
+          {t.services.title}
         </h2>
         <p className="font-body-lg text-[14px] sm:text-body-md md:text-body-lg text-tertiary max-w-2xl">
-          Comprehensive government citizen services and digital solutions under one roof with fast turnaround and verified compliance.
+          {t.services.subtitle}
         </p>
         
         {/* Category Filter Quick Pills */}
         <div className="flex flex-wrap items-center justify-center gap-3 pt-6">
-          <a className="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-primary-container hover:text-on-surface transition-colors shadow-sm" href="#cat-certificates">Government Certificates</a>
-          <a className="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-primary-container hover:text-on-surface transition-colors shadow-sm" href="#cat-identity">Identity & Documents</a>
-          <a className="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-primary-container hover:text-on-surface transition-colors shadow-sm" href="#cat-bills">Bills & Payments</a>
-          <a className="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-primary-container hover:text-on-surface transition-colors shadow-sm" href="#cat-welfare">Employment & Welfare</a>
-          <a className="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-primary-container hover:text-on-surface transition-colors shadow-sm" href="#cat-insurance">Insurance & Travel</a>
-          <a className="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-primary-container hover:text-on-surface transition-colors shadow-sm" href="#cat-printing">Printing & Xerox</a>
+          <a className="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-primary-container hover:text-on-surface transition-colors shadow-sm" href="#cat-certificates">{t.services.cat1}</a>
+          <a className="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-primary-container hover:text-on-surface transition-colors shadow-sm" href="#cat-identity">{t.services.cat2}</a>
+          <a className="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-primary-container hover:text-on-surface transition-colors shadow-sm" href="#cat-bills">{t.services.cat3}</a>
+          <a className="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-primary-container hover:text-on-surface transition-colors shadow-sm" href="#cat-welfare">{t.services.cat6}</a>
+          <a className="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-primary-container hover:text-on-surface transition-colors shadow-sm" href="#cat-insurance">{t.services.cat4}</a>
+          <a className="px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-primary-container hover:text-on-surface transition-colors shadow-sm" href="#cat-printing">{t.services.cat5}</a>
         </div>
       </div>
 
-      <CategorySection items={services.certificates} metaKey="certificates" />
-      <CategorySection items={services.identity} metaKey="identity" />
-      <CategorySection items={services.bills} metaKey="bills" />
-      <CategorySection items={services.welfare} metaKey="welfare" />
-      <CategorySection items={services.insurance} metaKey="insurance" />
-      <CategorySection items={services.printing} metaKey="printing" />
+      <CategorySection items={services.certificates} metaKey="certificates" title={t.services.cat1} subtitle={t.services.cat1Sub} />
+      <CategorySection items={services.identity} metaKey="identity" title={t.services.cat2} subtitle={t.services.cat2Sub} />
+      <CategorySection items={services.bills} metaKey="bills" title={t.services.cat3} subtitle={t.services.cat3Sub} />
+      <CategorySection items={services.welfare} metaKey="welfare" title={t.services.cat6} subtitle={t.services.cat6Sub} />
+      <CategorySection items={services.insurance} metaKey="insurance" title={t.services.cat4} subtitle={t.services.cat4Sub} />
+      <CategorySection items={services.printing} metaKey="printing" title={t.services.cat5} subtitle={t.services.cat5Sub} />
     </section>
   );
 }

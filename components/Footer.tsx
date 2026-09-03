@@ -1,9 +1,11 @@
 "use client";
 
 import { business } from "../data/site-content";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="w-full bg-inverse-surface text-inverse-on-surface pt-section-gap-sm pb-24 lg:pb-16 mt-section-gap-md">
@@ -21,16 +23,16 @@ export default function Footer() {
               </div>
             </div>
             <p className="font-body-sm text-body-sm text-tertiary-container max-w-sm">
-              Authorized Common Service Center (CSC) offering swift, frictionless Tamil Nadu e-Governance and Central citizen services right here in Villivakkam.
+              {t.footer.desc}
             </p>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/20 text-secondary-fixed text-label-sm font-label-sm self-start">
               <span className="material-symbols-outlined text-[16px]">verified_user</span>
-              <span>Central Govt Authorized CSC • Digital India</span>
+              <span>{t.footer.authPill}</span>
             </div>
           </div>
           
           <div className="lg:col-span-3 flex flex-col gap-3">
-            <h4 className="font-label-md text-label-md uppercase tracking-wider text-surface-container-lowest font-bold">Citizen Services</h4>
+            <h4 className="font-label-md text-label-md uppercase tracking-wider text-surface-container-lowest font-bold">{t.footer.servicesTitle}</h4>
             <ul className="flex flex-col gap-2.5 font-body-sm text-body-sm text-tertiary-container">
               <li><a className="hover:text-primary-fixed-dim transition-colors" href="#services">Aadhaar Enrolment & Update</a></li>
               <li><a className="hover:text-primary-fixed-dim transition-colors" href="#services">Patta & Chitta / EC Online</a></li>
@@ -41,7 +43,7 @@ export default function Footer() {
           </div>
           
           <div className="lg:col-span-2 flex flex-col gap-3">
-            <h4 className="font-label-md text-label-md uppercase tracking-wider text-surface-container-lowest font-bold">Center Timings</h4>
+            <h4 className="font-label-md text-label-md uppercase tracking-wider text-surface-container-lowest font-bold">{t.footer.timingsTitle}</h4>
             <div className="flex flex-col gap-2 font-body-sm text-body-sm text-tertiary-container">
               <p><span className="font-label-sm text-surface-container-lowest block">Mon – Sat</span>09:00 AM – 09:00 PM</p>
               <p><span className="font-label-sm text-surface-container-lowest block">Sunday</span>10:00 AM – 03:00 PM</p>
@@ -50,7 +52,7 @@ export default function Footer() {
           </div>
           
           <div className="lg:col-span-3 flex flex-col gap-3">
-            <h4 className="font-label-md text-label-md uppercase tracking-wider text-surface-container-lowest font-bold">Center Address</h4>
+            <h4 className="font-label-md text-label-md uppercase tracking-wider text-surface-container-lowest font-bold">{t.footer.addressTitle}</h4>
             <div className="flex flex-col gap-3 font-body-sm text-body-sm text-tertiary-container">
               <div className="flex items-start gap-2.5">
                 <span className="material-symbols-outlined text-primary-fixed text-[20px] shrink-0 mt-0.5">location_on</span>
