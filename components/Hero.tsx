@@ -2,6 +2,7 @@
 
 import { business } from "../data/site-content";
 import { useLanguage } from "../context/LanguageContext";
+import Image from "next/image";
 
 export default function Hero() {
   const { t, language } = useLanguage();
@@ -87,50 +88,15 @@ export default function Hero() {
                 <div className="absolute w-[360px] h-[360px] rounded-full bg-surface-container/60 -z-10"></div>
                 <div className="absolute w-[460px] h-[460px] rounded-full bg-surface-container-high/30 -z-10"></div>
                 
-                {/* Central Card: Official Resident ID / E-Sevai Portal Graphic */}
-                <div className="w-full max-w-[340px] bg-surface-container-lowest rounded-2xl p-6 shadow-[0_16px_36px_-6px_rgba(20,27,36,0.12)] z-10">
-                  <div className="flex items-center justify-between pb-4">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-lg bg-primary-fixed flex items-center justify-center">
-                        <span className="material-symbols-outlined text-primary text-[18px]">badge</span>
-                      </div>
-                      <div>
-                        <span className="block font-label-sm text-label-sm font-bold text-on-surface">E-GOVERNANCE PORTAL</span>
-                        <span className="block text-[10px] text-tertiary">CSC TN e-District Live Hub</span>
-                      </div>
-                    </div>
-                    <span className="px-2 py-0.5 rounded-md bg-secondary/10 text-secondary text-[11px] font-bold">VERIFIED</span>
-                  </div>
-                  
-                  {/* Sleek Card Mock Body */}
-                  <div className="bg-surface-container-low rounded-xl p-4 flex flex-col gap-3 my-2">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-lg bg-surface-variant flex items-center justify-center font-bold text-tertiary text-headline-sm">
-                        TN
-                      </div>
-                      <div className="flex flex-col gap-1 w-full">
-                        <div className="h-3 bg-surface-container-highest rounded-full w-4/5"></div>
-                        <div className="h-2.5 bg-surface-container-high rounded-full w-2/3"></div>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2 pt-2 text-[11px]">
-                      <div className="bg-surface-container-lowest p-2 rounded-lg">
-                        <span className="text-tertiary block font-mono">APP #</span>
-                        <span className="font-bold text-on-surface">TN-CSC-2025</span>
-                      </div>
-                      <div className="bg-surface-container-lowest p-2 rounded-lg">
-                        <span className="text-tertiary block font-mono">STATUS</span>
-                        <span className="font-bold text-secondary flex items-center gap-1">
-                          <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span> Instant
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center justify-between text-[11px] text-tertiary pt-2">
-                    <span className="font-semibold text-on-surface-variant">Villivakkam Citizen Counter #01</span>
-                    <span className="font-mono text-primary font-bold">● FAST TRACK</span>
-                  </div>
+                {/* Central Hero Image — Free Floating Cutout */}
+                <div className="relative w-full max-w-[500px] min-h-[380px] sm:min-h-[480px] z-10">
+                  <Image 
+                    src="/resources/images/hero Image.png" 
+                    alt="Harshith E Sevai Maiyam — Serving the People" 
+                    fill 
+                    className="object-contain drop-shadow-[0_24px_48px_rgba(20,27,36,0.15)] hover:scale-105 transition-transform duration-700"
+                    priority
+                  />
                 </div>
                 
                 {/* Orbiting Floating Badges (5 total) */}
