@@ -92,15 +92,16 @@ function EditorialCategory({ items, metaKey, title, subtitle, heroAlign, customH
       <div className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 ${heroAlign === 'right' ? 'lg:flex-row-reverse' : ''}`}>
         
         {/* FLOATING CUTOUT IMAGE */}
-        <div className="relative w-full lg:w-[45%] flex items-center justify-center pointer-events-none min-h-[240px] lg:min-h-[380px]">
+        <div className="relative w-full lg:w-[45%] flex items-center justify-center pointer-events-none">
           {/* Subtle Abstract Glow behind cutout */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-primary/5 rounded-full blur-[60px] -z-10"></div>
           
           <Image 
             src={imageSrc} 
             alt={title}
-            fill
-            className="object-contain drop-shadow-[0_24px_48px_rgba(20,27,36,0.15)] hover:scale-105 transition-transform duration-700 pointer-events-auto"
+            width={800}
+            height={800}
+            className="w-full lg:w-[90%] max-w-[460px] h-auto object-contain drop-shadow-[0_24px_48px_rgba(20,27,36,0.15)] hover:scale-105 transition-transform duration-700 pointer-events-auto"
             sizes="(max-width: 768px) 100vw, 45vw"
           />
         </div>
